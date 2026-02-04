@@ -1,0 +1,42 @@
+name: "🚀 Feature Request: CandM"
+description: "CandM 서비스의 새로운 백엔드 기능을 제안합니다."
+title: "[FEAT]: "
+labels: ["enhancement", "back-end"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Selfiown 백엔드 기능 제안을 환영합니다! 상세히 작성할수록 빠른 작업이 가능합니다.
+  - type: input
+    id: feature_name
+    attributes:
+      label: "기능 명칭"
+      placeholder: "예: 음식 인식 API 구현"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: "상세 설명"
+      placeholder: "어떤 기능을 개발해야 하는지 구체적으로 적어주세요."
+    validations:
+      required: true
+  - type: textarea
+    id: tasks
+    attributes:
+      label: "체크리스트 (To-do)"
+      value: |
+        - [ ] Controller 구현
+        - [ ] Service 로직 작성
+        - [ ] Repository 및 DTO 생성
+        - [ ] Unit Test 완료
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "우선순위"
+      options:
+        - Low
+        - Medium
+        - High
+    validations:
+      required: true
