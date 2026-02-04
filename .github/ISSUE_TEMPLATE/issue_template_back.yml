@@ -1,8 +1,8 @@
 name: "CandM: Platform Development"
-description: "CandM 웹 플랫폼"
+description: "CandM 웹 플랫폼 구축을 위한 기능 설계 및 개발 작업을 등록합니다."
 title: "[WEB]: "
 labels: ["CandM-Platform", "web-dev"]
-assignees: ["project-owner"]
+assignees: [] # 여기에 팀원의 GitHub ID를 적으면 자동 할당됩니다. 예: ["user1", "user2"]
 body:
   - type: markdown
     attributes:
@@ -26,7 +26,7 @@ body:
     id: user_story
     attributes:
       label: "👤 유저 스토리 및 목적"
-      placeholder: "사용자가 어떤 기능을 통해 무엇을 얻을 수 있는지 작성해주세요. (예: 사용자는 회원가입을 통해 본인의 데이터를 저장할 수 있다.)"
+      placeholder: "사용자가 무엇을 얻을 수 있는지 작성해주세요. (예: 사용자는 회원가입을 통해 본인의 데이터를 저장할 수 있다.)"
     validations:
       required: true
 
@@ -34,15 +34,15 @@ body:
     id: technical_spec
     attributes:
       label: "🛠️ 기술 명세 및 요구사항"
-      placeholder: "- 데이터베이스 설계 변경 내용\n- 사용될 라이브러리 및 프레임워크 (Spring Boot, React/Next.js 등)\n- 비즈니스 로직 핵심 포인트"
+      placeholder: "- DB 설계 변경 내용\n- 사용될 프레임워크 (Spring Boot, React 등)\n- 핵심 로직"
     validations:
       required: true
 
-- type: checkboxes
+  - type: checkboxes
     id: work_checklist
     attributes:
       label: "✅ 작업 체크리스트"
-      description: "해당되는 작업 항목을 체크해 주세요."
+      description: "해당되는 작업 항목을 체크해 주세요. (마우스로 체크 가능)"
       options:
         - label: "코드 수정 완료"
         - label: "작업 시작 (브랜치 생성)"
