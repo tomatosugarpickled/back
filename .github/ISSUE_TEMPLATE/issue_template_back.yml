@@ -51,18 +51,6 @@ body:
         - label: "백엔드 API 연동 확인"
         - label: "코드 컨벤션 준수 및 린트 체크"
 
-  - type: dropdown
-    id: environment
-    attributes:
-      label: "🚀 대상 환경"
-      options:
-        - "Local"
-        - "Development (Dev Server)"
-        - "Staging (QA)"
-        - "Production (Live)"
-    validations:
-      required: true
-
   - type: textarea
     id: etc
     attributes:
