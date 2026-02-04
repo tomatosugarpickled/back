@@ -6,7 +6,8 @@ create table tbl_members
     member_password varchar(255) not null,
     member_name varchar(255) not null,
     member_phone_number varchar(255) not null,
+    member_badge boolean not null default false,
     member_verified boolean not null default false,
-    created_datetime datetime default current_timestamp(),
-    edited_datetime datetime default current_timestamp()
+    created_account_datetime datetime default current_timestamp(),
+    edited_account_datetime datetime default current_timestamp()
 );

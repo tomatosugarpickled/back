@@ -6,5 +6,6 @@ create table tbl_messages
     sender_id bigint unsigned not null,
     receiver_id bigint unsigned not null,
     read_or_not boolean not null default false,
-    notification_datetime datetime default current_timestamp()
+    notification_datetime datetime default current_timestamp(),
+    message_content text not null
 );
