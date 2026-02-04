@@ -1,42 +1,75 @@
-name: "🚀 Feature Request: CandM"
-description: "CandM 서비스의 새로운 백엔드 기능을 제안합니다."
-title: "[FEAT]: "
-labels: ["enhancement", "back-end"]
+name: "CandM: Platform Development"
+description: "CandM 웹 플랫폼"
+title: "[WEB]: "
+labels: ["CandM-Platform", "web-dev"]
+assignees: ["project-owner"]
 body:
   - type: markdown
     attributes:
       value: |
-        Selfiown 백엔드 기능 제안을 환영합니다! 상세히 작성할수록 빠른 작업이 가능합니다.
-  - type: input
-    id: feature_name
-    attributes:
-      label: "기능 명칭"
-      placeholder: "예: 음식 인식 API 구현"
-    validations:
-      required: true
-  - type: textarea
-    id: description
-    attributes:
-      label: "상세 설명"
-      placeholder: "어떤 기능을 개발해야 하는지 구체적으로 적어주세요."
-    validations:
-      required: true
-  - type: textarea
-    id: tasks
-    attributes:
-      label: "체크리스트 (To-do)"
-      value: |
-        - [ ] Controller 구현
-        - [ ] Service 로직 작성
-        - [ ] Repository 및 DTO 생성
-        - [ ] Unit Test 완료
+        ## 🌐 CandM 플랫폼 구축 작업 정의서
+        웹 사이트의 기능 구현, UI/UX 반영, API 연동 등을 구체적으로 명시해주세요.
+
   - type: dropdown
-    id: priority
+    id: area
     attributes:
-      label: "우선순위"
+      label: "💻 개발 영역"
+      description: "어떤 파트의 작업인가요?"
       options:
-        - Low
-        - Medium
-        - High
+        - "Front-end (UI/UX)"
+        - "Back-end (API, Server)"
+        - "DB"
     validations:
       required: true
+
+  - type: textarea
+    id: user_story
+    attributes:
+      label: "👤 유저 스토리 및 목적"
+      placeholder: "사용자가 어떤 기능을 통해 무엇을 얻을 수 있는지 작성해주세요. (예: 사용자는 회원가입을 통해 본인의 데이터를 저장할 수 있다.)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: technical_spec
+    attributes:
+      label: "🛠️ 기술 명세 및 요구사항"
+      placeholder: "- 데이터베이스 설계 변경 내용\n- 사용될 라이브러리 및 프레임워크 (Spring Boot, React/Next.js 등)\n- 비즈니스 로직 핵심 포인트"
+    validations:
+      required: true
+
+  - type: textarea
+    id: api_interface
+    attributes:
+      label: "🔗 API / Interface 명세 (FE-BE 협업)"
+      placeholder: "프론트와 백엔드가 주고받을 데이터 구조를 정의하세요.\n- Endpoint: /api/v1/...\n- Method: GET/POST\n- Key Params: { 'id': Long, 'status': String }"
+
+  - type: textarea
+    id: checklist
+    attributes:
+      label: "✅ 작업 체크리스트"
+      value: |
+        - [ ] 코드 수정 완료
+        - [ ] 작업 시작
+        - [ ] 추가 기능 개발
+        - [ ] 버그 수정
+    validations:
+      required: true
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: "🚀 대상 환경"
+      options:
+        - "Local"
+        - "Development (Dev Server)"
+        - "Staging (QA)"
+        - "Production (Live)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: etc
+    attributes:
+      label: "📌 기타 사항"
+      placeholder: "마감 기한, 타 업무와의 연관성 등 자유롭게 작성해주세요."
