@@ -18,7 +18,7 @@
         <div class="left-wrap">
             <div class="member-logo logo-container">
                 <div class="logo-wrap">
-                    <img src="../../static/image/enterprise/logo.png" alt="로고 이미지">
+                    <img src="/image/enterprise/logo.png" alt="로고 이미지">
                 </div>
             </div>
         </div>
@@ -31,29 +31,31 @@
                     <div class="login-wrap">
                         <div class="login-group">
                             <div class="login-group-width">
-                                <div class="login-div">
-                                    <div class="email-wrap">
-                                        <div class="email-inner">
-                                            <div class="email-word">
-                                                <input placeholder="이메일을 입력해주세요" class="emailwrite" type="email">
+                                <form action="" method="post" name="loginForm" class="login-form">
+                                    <div class="login-div">
+                                        <div class="email-wrap">
+                                            <div class="email-inner">
+                                                <div class="email-word">
+                                                    <input placeholder="이메일을 입력해주세요" name="emailForm" class="emailwrite" type="email">
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <!-- 이메일이 있을 시: none class 제거 필요 -->
-                                    <div class="password-wrap none">
-                                        <div class="password-inner">
-                                            <div class="password-word">
-                                                <input placeholder="패스워드를 입력해주세요." class="passwordwrite" type="password">
+                                        <!-- 이메일이 있을 시: none class 제거 필요 -->
+                                        <div class="password-wrap">
+                                            <div class="password-inner">
+                                                <div class="password-word">
+                                                    <input placeholder="패스워드를 입력해주세요." name="passwordForm" class="passwordwrite" type="password">
+                                                </div>
                                             </div>
                                         </div>
+                                        <!--  -->
+                                        <div class="goingwrap">
+                                            <button class="goingbutton" type="submit" > <!-- 활성화시 disabled를 빼주세요. -->
+                                                <span class="goingword">로그인하기</span> <!-- 이메일이 있을 시: 로그인하기 -->
+                                            </button>
+                                        </div>
                                     </div>
-                                    <!--  -->
-                                    <div class="goingwrap">
-                                        <button class="goingbutton" > <!-- 활성화시 disabled를 빼주세요. -->
-                                            <span class="goingword">계속하기</span> <!-- 이메일이 있을 시: 로그인하기 -->
-                                        </button>
-                                    </div>
-                                </div>
+                                </form>
                             </div>
                         </div>
                         <div class="or-word-wrap">

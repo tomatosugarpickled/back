@@ -163,6 +163,10 @@ svg {
     width: 100%;
 }
 
+.login-form {
+    width: 100%;
+}
+
 .login-div{
     align-items: flex-start;
     flex-direction: column;

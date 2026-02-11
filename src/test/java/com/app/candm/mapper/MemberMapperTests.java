@@ -1,6 +1,7 @@
 package com.app.candm.mapper;
 
 import com.app.candm.common.enumeration.Provider;
+import com.app.candm.domain.MemberVO;
 import com.app.candm.dto.member.MemberDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
@@ -35,6 +36,16 @@ public class MemberMapperTests {
             log.info("{}.........",foundMember.isEmpty());
         }
 
+
+    @Test
+    public void selectMemberForLogin(){
+        MemberDTO memberDTO = new MemberDTO();
+        memberDTO.setMemberEmail("tjdgh12@naver.com");
+        memberDTO.setMemberPassword("1234");
+
+        Optional<MemberVO> foundMember = memberMapper.selectMemberForLogin(memberDTO);
+        log.info("{}.............",foundMember);
+    }
 
     }
 
