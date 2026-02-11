@@ -31,12 +31,12 @@
                     <div class="login-wrap">
                         <div class="login-group">
                             <div class="login-group-width">
-                                <form action="" method="post" name="loginForm" class="login-form">
+                                <form action="/member/join" method="post" name="loginForm" class="login-form">
                                     <div class="login-div">
                                         <div class="email-wrap">
                                             <div class="email-inner">
                                                 <div class="email-word">
-                                                    <input placeholder="이메일을 입력해주세요" name="emailForm" class="emailwrite" type="email">
+                                                    <input placeholder="이메일을 입력해주세요" name="emailInput" class="emailwrite" type="email">
                                                 </div>
                                             </div>
                                         </div>
@@ -183,5 +183,7 @@
     init();
     animate();
 </script>
+<script>const login = "[[${login}]]"</script>
+<script src="/js/member/member-login/event.js"></script>
 </body>
 </html>
