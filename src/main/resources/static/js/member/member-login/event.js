@@ -5,7 +5,7 @@ console.log(allInputs);
 
 
 if(login ==="fail"){
-    alert("아이디 혹은 비밀번호를 다시 확인해주세요")
+    alert("아이디 또는 비밀번호를 다시 확인해주세요")
 }
 
 loginButton.addEventListener("click", (e) => {
@@ -19,7 +19,7 @@ loginButton.addEventListener("click", (e) => {
     })
 
     if(!isAllFilled) {
-        alert("아이디 비밀번호를 모두 입력해주세요.")
+        alert("아이디 또는 비밀번호를 입력해주세요.")
         return;
     }
 
