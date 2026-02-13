@@ -1,4 +1,4 @@
-package com.app.candm.reopsitory;
+package com.app.candm.repository;
 
 import com.app.candm.mapper.TeamMapper;
 import lombok.RequiredArgsConstructor;
