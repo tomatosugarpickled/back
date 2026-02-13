@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.app.candm.mapper.MessageMapper">
     <insert id="insert" useGeneratedKeys="true" keyProperty="id">
-        insert into tbl_message (sender_id, receiver_id, message_content, message_room_id)
-        values (#{senderId}, #{receiverId}, #{messageContent}, #{messageRoomId})
+        insert into tbl_message (message_content, message_room_id)
+        values (#{messageContent}, #{messageRoomId})
     </insert>
 </mapper>
