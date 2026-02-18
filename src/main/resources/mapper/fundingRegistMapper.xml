@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.candm.mapper.FundingRegistMapper">
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        insert into tbl_funding (
+            funding_target_amount, funding_title, start_date,
+            end_date, funding_description, funding_contact_email,
+            team_id
+        )
+        values (
+                   #{fundingTargetAmount}, #{fundingTitle}, #{startDate},
+                   #{endDate}, #{fundingDescription}, #{fundingContactEmail},
+                   #{teamId}
+               )
+    </insert>
+
+    <select id="selectAllByTeamId" resultType="fundingVO">
+        select
+            id, funding_target_amount, funding_current_amount,
+            funding_title, start_date, end_date,
+            funding_description, funding_contact_email,
+            created_datetime, funding_status, team_id
+        from tbl_funding
+        where team_id = #{teamId}
+        order by created_datetime desc
+    </select>
+
+    <select id="selectById" resultType="fundingVO">
+        select
+            id, funding_target_amount, funding_current_amount,
+            funding_title, start_date, end_date,
+            funding_description, funding_contact_email,
+            created_datetime, funding_status, team_id
+        from tbl_funding
+        where id = #{id}
+    </select>
+
+    <update id="updateStatus">
+        update tbl_funding
+        set funding_status = #{fundingStatus}
+        where id = #{id}
+    </update>
+
+</mapper>
