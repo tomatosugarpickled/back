@@ -5,4 +5,13 @@
         insert into tbl_team (team_title, team_url, team_contact_email, team_intro, member_id)
         values(#{teamTitle}, #{teamUrl}, #{teamContactEmail}, #{teamIntro}, #{memberId})
     </insert>
+    <select id="selectByTitle" resultType="teamVO">
+        select id, team_title, team_url, team_contact_email, team_status, team_intro, member_id
+        from tbl_team where team_title = #{teamTitle}
+    </select>
+
+    <select id="selectByUrl" resultType="teamVO">
+        select id, team_title, team_url, team_contact_email, team_status, team_intro, member_id
+        from tbl_team where team_url = #{teamUrl}
+    </select>
 </mapper>

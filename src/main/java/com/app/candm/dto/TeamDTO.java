@@ -1,6 +1,8 @@
 package com.app.candm.dto;
 
 import com.app.candm.common.enumeration.Status;
+import com.app.candm.domain.MemberVO;
+import com.app.candm.domain.TeamVO;
 import lombok.*;
 
 @Getter
@@ -19,4 +21,18 @@ public class TeamDTO {
     private String createdDatetime;
     private String updatedDatetime;
 
+
+    public TeamVO toTeamVO(){
+        return TeamVO.builder()
+                .id(id)
+                .teamIntro(teamIntro)
+                .teamTitle(teamTitle)
+                .teamContactEmail(teamContactEmail)
+                .teamStatus(teamStatus)
+                .memberId(memberId)
+                .teamUrl(teamUrl)
+                .createdDatetime(createdDatetime)
+                .updatedDatetime(updatedDatetime)
+                .build();
+    }
 }
