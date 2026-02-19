@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // 3. 개인정보 설정 버튼 클릭 감지
-        const setBtn = target.closest(".profile-setting-content-div");
+        const setBtn = target.closest(".activity-button");
         if (setBtn) {
             openModal("setting-modal");
             return;

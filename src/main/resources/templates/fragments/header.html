@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<link th:src="@{../static/css/main/main.css}">
+<div th:fragment="layout(content)">
+    <div   class="header">
+        <div class="main">
+            <!-- 사이드바쪽 -->
+            <div class="side-bar">
+                <!-- 로고랑 로그인 후 검색 영역전체 -->
+                <div class="logo-all">
+                    <!--로고랑 로그인 후 검색 가능 영역 전체인데 로고올보단 작은 영역 -->
+                    <div class="logo-center">
+                        <a href="">
+                            <!-- 로고 영역 -->
+                            <div class="logo">
+                                <img th:src="@{/image/c&m.png}" width="100px" height="100px">
+                            </div>
+                        </a>
+                        <!-- 로그인 후 검색 가능 박스 영역 -->
+                        <div class="serch">
+                            <!-- 로그인 후 검색 가능 글자 영역 -->
+                            <div class="serch-in">
+                                <p class="logo-center-text">커뮤니티 탐색</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 사이드바 카테고리 전체 -->
+                <div class="side-bar-category-all">
+                    <!-- 사이드바 카테고리 전체중 카테고리만 -->
+                    <div class="side-bar-category">
+                        <!-- 카테고리들 -->
+                        <div class="category-parts">
+                            <div>
+                                <a href="parts">
+                                    <div class="first-wrap">
+                                        <div class="first-part-icon">
+                                            <svg aria-label="icon" color="foregrounds.surface.inverted" fill="currentColor" height="19.2" role="img" width="19.2">
+                                                <use href="#home-simple-2-solid"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="first-part-text">
+                                            <p class="home">홈</p>
+                                            <p class="news">가장 빠른 소식</p>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="parts">
+                                    <div class="second-wrap">
+                                        <div class="second-part-icon">
+                                            <svg aria-label="icon" color="foregrounds.neutral.tertiary" fill="currentColor" height="19.2" role="img" width="19.2">
+                                                <use href="#globe-earth-2-solid"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="second-part-text">
+                                            <p class="event-text">팀찾기</p>
+                                            <p class="event-conference-text">새로운 기회 탐색</p>
+                                        </div>
+                                        <div>
+                                            <div class="update-text">
+                                            <span class="update-blue">
+                                                핫이슈
+                                            </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="parts">
+                                    <div class="third-wrap">
+                                        <div class="third-part-icon">
+                                            <svg aria-label="icon" color="foregrounds.neutral.tertiary" fill="currentColor" height="19.2" role="img" width="19.2">
+                                                <use href="#users-group-3-solid"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="third-part-text">
+                                            <p class="employ">파트너찾기</p>
+                                            <p class="new-chance">새로운 친구 탐색</p>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="parts">
+                                    <div class="fourth-wrap">
+                                        <div class="fourth-part-icon">
+                                            <svg aria-label="icon" color="foregrounds.neutral.tertiary" fill="currentColor" height="19.2" role="img" width="19.2">
+                                                <use href="#book-open-solid"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="fourth-part-text">
+                                            <p class="education">인사이트</p>
+                                            <p class="boot">빠른 가이드 정보</p>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="parts">
+                                    <div class="fifth-wrap">
+                                        <div class="fifth-part-icon">
+                                            <svg aria-label="icon" color="foregrounds.neutral.tertiary" fill="currentColor" height="19.2" role="img" width="19.2">
+                                                <use href="#comments-solid"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="fifth-part-text">
+                                            <p class="message-box">메세지함</p>
+                                            <p class="sosic">나를 위한 소식</p>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="parts">
+                                    <div class="sixth-wrap">
+                                        <div class="sixth-part-icon">
+                                            <svg aria-label="icon" color="foregrounds.neutral.tertiary" fill="currentColor" height="19.2" role="img" width="19.2">
+                                                <use href="#telescope-solid"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="sixth-part-text">
+                                            <p class="hub">펀딩</p>
+                                            <p class="moa">스타트업,아이디어 펀딩</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- 펼치기 부분 -->
+                        <div class="part-detail">
+                            <div class="part-detail-detail">
+                                <div class="part-detail-parts">
+                                    <div class="anim-slide-down">
+                                        <a href="slides">
+                                            <div class="first-slide" style="display: none;">
+                                                <div class="first-slide-icon">
+                                                    <div class="first-icon">
+                                                        <img src="https://www.rocketpunch.com/_next/image?url=https%3A%2F%2Fimage.rocketpunch.com%2Fcompany%2F6101%2Fwaug_logo_1700805327.png&amp;w=48&amp;q=75" class="img">
+                                                    </div>
+                                                </div>
+                                                <div class="first-slide-text">
+                                                    <span class="first-text">펀딩1</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="anim-slide-down">
+                                        <a href="slides">
+                                            <div class="second-slide" style="display: none;">
+                                                <div class="second-slide-icon">
+                                                    <div class="second-icon">
+                                                        <img src="https://www.rocketpunch.com/_next/image?url=https%3A%2F%2Fimage.rocketpunch.com%2Fcompany%2F6101%2Fwaug_logo_1700805327.png&amp;w=48&amp;q=75" class="img">
+                                                    </div>
+                                                </div>
+                                                <div class="second-slide-text">
+                                                    <span class="second-text">펀딩2</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="anim-slide-down">
+                                        <a href="slides">
+                                            <div class="third-slide" style="display: none;">
+                                                <div class="third-slide-icon">
+                                                    <div class="third-icon">
+                                                        <img src="https://www.rocketpunch.com/_next/image?url=https%3A%2F%2Fimage.rocketpunch.com%2Fcompany%2F6101%2Fwaug_logo_1700805327.png&amp;w=48&amp;q=75" class="img">
+                                                    </div>
+                                                </div>
+                                                <div class="third-slide-text">
+                                                    <span class="third-text">펀딩3</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="anim-slide-down">
+                                        <a href="slides">
+                                            <div class="fourth-slide" style="display: none;">
+                                                <div class="fourth-slide-icon">
+                                                    <div class="fourth-icon">
+                                                        <img src="https://www.rocketpunch.com/_next/image?url=https%3A%2F%2Fimage.rocketpunch.com%2Fcompany%2F6101%2Fwaug_logo_1700805327.png&amp;w=48&amp;q=75" class="img">
+                                                    </div>
+                                                </div>
+                                                <div class="fourth-slide-text">
+                                                    <span class="fourth-text">펀딩4</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="anim-slide-down">
+                                        <a href="slides">
+                                            <div class="fifth-slide" style="display: none;">
+                                                <div class="fifth-slide-icon">
+                                                    <div class="fifth-icon">
+                                                        <img src="https://www.rocketpunch.com/_next/image?url=https%3A%2F%2Fimage.rocketpunch.com%2Fcompany%2F6101%2Fwaug_logo_1700805327.png&amp;w=48&amp;q=75" class="img">
+                                                    </div>
+                                                </div>
+                                                <div class="fifth-slide-text">
+                                                    <span class="fifth-text">펀딩5</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="anim-slide-down">
+                                        <a href="slides">
+                                            <div class="sixth-slide" style="display: none;">
+                                                <div class="sixth-slide-icon">
+                                                    <div class="sixth-icon">
+                                                        <img src="https://www.rocketpunch.com/_next/image?url=https%3A%2F%2Fimage.rocketpunch.com%2Fcompany%2F6101%2Fwaug_logo_1700805327.png&amp;w=48&amp;q=75" class="img">
+                                                    </div>
+                                                </div>
+
+                                                <div class="sixth-slide-text">
+                                                    <span class="sixth-text">펀딩6</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="open-close">
+                                    <p class="close">펼치기</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 개인정보와 약관 기업서비스 -->
+                    <div class="service">
+                        <!-- 로그인 후 설정 -->
+                        <div class="option">
+                            <div class="option-service">
+                                <p class="option-service-text">설정</p>
+                            </div>
+                        </div>
+                        <!-- 기업서비스 -->
+                        <div class="company-service">
+                            <div class="company-service-in">
+                                <p class="company-service-text">기업 서비스</p>
+                            </div>
+                        </div>
+                        <!-- 지원센터 -->
+                        <div class="help">
+                            <div class="help-service">
+                                <p class="help-service-text">지원센터</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 풋터 쿠키맞춤설정 본서비스에서~02 -->
+                    <div class="footer">
+                        <div class="footer-service-bon">
+                            <p class="bon-service-text">
+                                본 서비스에서 제공하는 사용자의 개인정보 데이터를 포함하여 각 정보주체의 동의 없이 데이터를 무단으로 수집하는 행위를 금지 및 거부합니다. 공개된 데이터도 크롤링 등
+                                기술적 장치를 이용해 허가 없이 수집하는 경우 개인정보 보호법에 따라 형사처벌 될 수 있음을 알려드립니다.
+                            </p>
+                        </div>
+                        <div class="footer-service-two">
+                            <p class="two-five-text">
+                                © 2025 Rocketpunch, 주식회사 더블에이스, 한동석, 대한민국 서울특별시 성동구 성수일로10길 12, 12층 1호, 04793,
+                                support@rocketpunch.com, +82 10-2710-7121
+                            </p>
+                        </div>
+                        <!-- 사업자등록번호부터 접기까지 -->
+                        <div class="footer-text-open-close">
+                            <div class="footer-service-saupja">
+                                <p class="saupja-text-content" style="display: none;">
+                                    사업자등록번호 206-87-09615
+                                    통신판매업신고번호 2025-서울성동-0105
+                                    직업정보제공사업신고번호: J1202020240015
+                                    유료직업소개사업등록번호: 제2025-3030135-14-5-00002
+                                </p>
+                            </div>
+                            <div class="fold">
+                                <p class="fold-service">
+                                    <span class="fold-content">펼치기</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="login-icon1">
+                    <div class="login-icon1-in">
+                        <div class="login-icon1-in-line">
+                            <div class="line"></div>
+                        </div>
+                        <div class="login-icon1-in-center">
+                            <a href="login1" class="logincenter">
+                                <button class="login-button">
+                                    <p class="user-login">로그인</p>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 사이드바제외한 메인화면 -->
+
+                <main class="main-center">
+                    <div class="header">
+                        <div class="header-center">
+                            <!-- <div class="sidebar-control">
+                                <button class="sidebar-control-button">
+                                    <div class="sidebar-control-button-in">
+                                        <svg aria-label="icon" color="foregrounds.neutral.primary" fill="currentColor" height="18" role="img" width="18"><use href="#layout-sidebar-left-outline"></use></svg>
+                                    </div>
+                                </button>
+                            </div> -->
+                            <div class="header-text">
+                                <p class="header-text-content">마이페이지</p>
+                            </div>
+                            <!-- 알림(모달) 부분 -->
+                            <div class="notification-wrapper">
+                                <button class="notification-bell-button" id="notification-bell">
+                                    <svg aria-label="icon" color="foregrounds.neutral.primary" fill="currentColor" height="24" role="img" width="24">
+                                        <use href="#bell-outline"></use>
+                                    </svg>
+                                </button>
+
+                                <!-- 알람 모달 -->
+                                <div class="notification-modal" id="notification-modal">
+                                    <div class="notification-modal-header">
+                                        <div class="notification-modal-title">
+                                            <h3>알림</h3>
+                                        </div>
+                                        <button class="notification-clear-all" id="clear-all-notifications">
+                                            <span>모두 지우기</span>
+                                        </button>
+                                    </div>
+                                    <div class="notification-modal-content">
+                                        <!-- 알림 아이템들 -->
+                                        <div class="notification-item">
+                                            <div class="notification-item-avatar">
+                                                <img src="https://i.pravatar.cc/150?img=33" alt="Steve Jobs">
+                                            </div>
+                                            <div class="notification-item-content">
+                                                <div class="notification-item-text">
+                                                    <p><strong>Steve Jobs</strong>님이 회원님의 게시물에 좋아요를 눌렀습니다.</p>
+                                                </div>
+                                                <div class="notification-item-time">
+                                                    <span>2시간 전</span>
+                                                </div>
+                                            </div>
+                                            <button class="notification-item-delete">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M17.435 5.435a.8.8 0 1 1 1.13 1.13L13.131 12l5.434 5.435a.8.8 0 1 1-1.13 1.13L12 13.131l-5.435 5.434a.8.8 0 1 1-1.13-1.13L10.869 12 5.435 6.565a.8.8 0 1 1 1.13-1.13L12 10.869z"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+
+                                        <div class="notification-item">
+                                            <div class="notification-item-avatar">
+                                                <img src="https://i.pravatar.cc/150?img=12" alt="Elon Musk">
+                                            </div>
+                                            <div class="notification-item-content">
+                                                <div class="notification-item-text">
+                                                    <p><strong>Elon Musk</strong>님이 회원님을 팔로우하기 시작했습니다.</p>
+                                                </div>
+                                                <div class="notification-item-time">
+                                                    <span>5시간 전</span>
+                                                </div>
+                                            </div>
+                                            <button class="notification-item-delete">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M17.435 5.435a.8.8 0 1 1 1.13 1.13L13.131 12l5.434 5.435a.8.8 0 1 1-1.13 1.13L12 13.131l-5.435 5.434a.8.8 0 1 1-1.13-1.13L10.869 12 5.435 6.565a.8.8 0 1 1 1.13-1.13L12 10.869z"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+
+                                        <div class="notification-item">
+                                            <div class="notification-item-avatar">
+                                                <img src="https://i.pravatar.cc/150?img=58" alt="Bill Gates">
+                                            </div>
+                                            <div class="notification-item-content">
+                                                <div class="notification-item-text">
+                                                    <p><strong>Bill Gates</strong>님이 회원님의 게시물에 댓글을 남겼습니다: "훌륭한 인사이트입니다!"</p>
+                                                </div>
+                                                <div class="notification-item-time">
+                                                    <span>1일 전</span>
+                                                </div>
+                                            </div>
+                                            <button class="notification-item-delete">
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                    <path d="M17.435 5.435a.8.8 0 1 1 1.13 1.13L13.131 12l5.434 5.435a.8.8 0 1 1-1.13 1.13L12 13.131l-5.435 5.434a.8.8 0 1 1-1.13-1.13L10.869 12 5.435 6.565a.8.8 0 1 1 1.13-1.13L12 10.869z"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+
+                                        <!-- 알림이 없을 때 -->
+                                        <div class="notification-empty" style="display: none;">
+                                            <p>새로운 알림이 없습니다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 로그인 후 -->
+                            <div class="login-icon2">
+                                <div class="park">
+                                    <div class="park-in">
+                                        <img th:src="@{/image/profiles/basicprofile.jpg}" class="park-img">
+                                    </div>
+                                </div>
+                                <div class="modal-park" style="display: none;">
+                                    <div class="modal-park-name">
+                                        <div class="modal-park-name-text">박하민</div>
+                                    </div>
+                                    <div class="modal-park-content">
+                                        <div class="modal-park-content-in">
+                                            <div class="modal-park-content-in-in">
+                                                <a href="/@kausha">
+                                                    <div class="my-profile">
+                                                        <div class="my-profile-in">
+                                                            <div class="my-profile-logo-text">
+                                                                <div class="my-profile-logo">
+                                                                    <div class="my-profile-logo-in">
+                                                                        <svg aria-label="icon" color="foregrounds.neutral.primary" fill="currentColor" height="24" role="img" width="24">
+                                                                            <use href="#user-outline"></use>
+                                                                        </svg>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="my-profile-text">
+                                                                    <p class="my-profile-text-in">내 프로필</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <div class="logout">
+                                                    <div class="logout-in">
+                                                        <div class="logout-logo-text">
+                                                            <div class="logout-logo">
+                                                                <div class="logout-logo-in">
+                                                                    <svg aria-label="icon" color="foregrounds.neutral.primary" fill="currentColor" height="24" role="img" width="24">
+                                                                        <use href="#login-outline"></use>
+                                                                    </svg>
+                                                                </div>
+                                                            </div>
+                                                            <div class="logout-text">
+                                                                <p class="logo-text-in">로그아웃</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 로그인 전 -->
+                            <!-- <div class="login-icon2">
+                                <a href="login">
+                                    <button class="login2">
+                                        <span class="login2-text">로그인</span>
+                                    </button>
+                                </a>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="center">
+                            <th:block th:replace="${content}"></th:block>
+                    </div>
+                    <div class="login-icon3"></div>
+                </main>
+        </div>
+    </div>
+</div>
