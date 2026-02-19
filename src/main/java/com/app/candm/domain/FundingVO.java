@@ -5,12 +5,11 @@ import com.app.candm.common.enumeration.Status;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
-@Getter
-@ToString(callSuper = true)
-@EqualsAndHashCode(of="id")
+@Getter @ToString(callSuper = true)
+@EqualsAndHashCode(of = "id")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @SuperBuilder
-public class FundingRegistVO  extends Period {
+public class FundingVO extends Period {
     private Long id;
     private Long fundingTargetAmount;
     private Long fundingCurrentAmount;

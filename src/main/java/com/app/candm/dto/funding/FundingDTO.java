@@ -1,7 +1,7 @@
 package com.app.candm.dto.funding;
 
 import com.app.candm.common.enumeration.Status;
-import com.app.candm.domain.FundingRegistVO;
+import com.app.candm.domain.FundingVO;
 import lombok.*;
 
 @Getter
@@ -9,7 +9,7 @@ import lombok.*;
 @ToString
 @EqualsAndHashCode(of="id")
 @NoArgsConstructor
-public class FundingRegistDTO {
+public class FundingDTO {
     private Long id;
     private Long fundingTargetAmount;
     private Long fundingCurrentAmount;
@@ -23,8 +23,8 @@ public class FundingRegistDTO {
     private Long teamId;
 
     // VO로 변환하는 메서드
-    public FundingRegistVO toFundingVO() {
-        return FundingRegistVO.builder()
+    public FundingVO toFundingVO() {
+        return FundingVO.builder()
                 .id(id)
                 .fundingTargetAmount(fundingTargetAmount)
                 .fundingCurrentAmount(fundingCurrentAmount)
