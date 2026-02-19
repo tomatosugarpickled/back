@@ -2011,6 +2011,10 @@ a {
     display: flex;
 }
 
+.center::-webkit-scrollbar{
+    display: none;
+}
+
 .banner {
     justify-content: space-between;
     align-items: flex-end;

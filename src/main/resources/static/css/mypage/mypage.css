@@ -2494,6 +2494,13 @@ img, video {
     display: flex;
 }
 
+.careerForm {
+    height: 100%;
+    overflow-y: auto;
+}
+.careerForm::-webkit-scrollbar {
+    display: none;
+}
 
 .modal-header-text1 {
     user-select: none;

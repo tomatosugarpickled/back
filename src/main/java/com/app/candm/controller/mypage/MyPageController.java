@@ -15,16 +15,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Slf4j
 public class MyPageController {
 
+//    마이페이지 이동, 이동 시 로그인 정보가 없으면 로그인 페이지로 이동
     @GetMapping("")
     public String gotoMyPage(HttpSession session, Model model){
         MemberDTO memberDTO = (MemberDTO) session.getAttribute("member");
         if(memberDTO == null){
             return "redirect:/member/login";
         }
-        log.info(memberDTO.toString());
         model.addAttribute("member", memberDTO);
         model.addAttribute("isOwner", true);
         return "mypage/mypage";
+
+
 
     }
 }
