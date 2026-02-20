@@ -3,10 +3,10 @@
 <mapper namespace="com.app.candm.mapper.MyPageMapper">
 
     <select id="selectByMemberId">
-        select m.id, m.member_email, m.member_password, m.member_name, m.member_status, m.created_datetime, m.updated_datetime, o.provider
-        from tbl_member m join tbl_oauth o
-        on m.id = o.id
-        where m.id = #{memberId}
+        select c.id, c.affiliation_title, c.member_employment_type, c.member_role, c.member_skill, c.intro_detailed, c.start_date, c.end_date, c.member_id, c.created_datetime, c.updated_datetime, m.id
+        from tbl_member_career c join tbl_member m
+        on c.member_id = m.id
+        where c.member_id = #{id}
     </select>
 
 <!--    경력 입력-->

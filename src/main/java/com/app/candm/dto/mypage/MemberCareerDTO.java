@@ -16,7 +16,11 @@ public class MemberCareerDTO {
     private String memberSkill;
     private String introDetailed;
     private String startDate;
+    private String startYear;
+    private String startMonth;
     private String endDate;
+    private String endYear;
+    private String endMonth;
     private Long memberId;
     private String createdDatetime;
     private String updatedDatetime;

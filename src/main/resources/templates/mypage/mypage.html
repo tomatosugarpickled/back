@@ -8,9 +8,7 @@
     <link rel="stylesheet" href="/css/mypage/mypage.css">
     <link rel="stylesheet" href="/css/mypage/mypage-sub-style.css">
     <link rel="stylesheet" href="/css/main/main.css">
-    <script src="/js/mypage/logo-carousel.js" defer></script>
-    <script src="/js/mypage/tab-switch.js" defer></script>
-    <script src="/js/mypage/mypage.js" defer></script>
+
 </head>
 
 <body>
@@ -337,6 +335,7 @@
                                             <p class="user-content-history-content-second">경력 등록 시 다른 사용자에게 노출되고 새로운 제안을 받을
                                                 확률이 2배까지 증가합니다.</p>
                                         </div>
+
                                         <button type="button" class="user-content-history-registration">
                                             <span class="user-content-history-registration-word">등록하기</span>
                                         </button>
@@ -626,7 +625,7 @@
                             <span class="plus-icon">+</span> 경력 추가하기
                         </button>
                     </div>
-                    <form action="" method="post" name="career-form" class="careerForm" th:object="${member}">
+                    <form action="/mypage" method="post" name="career-form" class="careerForm" th:object="${member}">
                         <div class="modal-form">
                             <div class="form-row">
                                 <div class="form-group half">
@@ -686,7 +685,7 @@
                             </th:block>
                             <div class="modal-footer">
                                 <button class="btn-delete" type="button">경력 삭제</button>
-                                <button class="save-btn" id="save-career-btn" type="button">저장하기</button>
+                                <button class="save-btn" id="save-career-btn" type="submit">저장하기</button>
                             </div>
                         </div>
                     </form>
@@ -1207,6 +1206,12 @@
         </svg>
     </div>
 </div>
+<script th:inline="javascript">
+    const memberCareer = [[${memberCareer}]];
+</script>
+    <script src="/js/mypage/logo-carousel.js" defer></script>
+    <script src="/js/mypage/tab-switch.js" defer></script>
+    <script src="/js/mypage/mypage.js" defer></script>
     <script src="/js/mypage/event.js"></script>
     <script src="/js/main/main.js"></script>
 </body>

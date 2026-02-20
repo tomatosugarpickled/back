@@ -2150,7 +2150,7 @@ img, video {
 
 .save-btn {
     background-color: var(--text-primary);
-    color: var(--text-primary);
+    color: #64748b;
     border: none;
     padding: 0 32px;
     height: 44px; /* Fixed height match */
