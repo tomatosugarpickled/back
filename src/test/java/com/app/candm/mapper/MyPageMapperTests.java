@@ -4,6 +4,7 @@ import com.app.candm.domain.MemberCareerVO;
 import com.app.candm.domain.MemberEducationVO;
 import com.app.candm.dto.mypage.MemberCareerDTO;
 import com.app.candm.dto.mypage.MemberEducationDTO;
+import com.app.candm.repository.mypage.MemberEducationDAO;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,5 +68,15 @@ public class MyPageMapperTests {
         mypageMapper.educationInsert(memberEducationDTO.toMemberEducationVO());
     }
 
+    @Test
+    public void testFindEduById(){
+        List<MemberEducationDTO> educations = mypageMapper.selectEducationByMemberId(5L);
+        log.info("{},,,,,,,,,,,,,,,,,",educations);
+    }
+
+    @Test
+    public void testDeleteEdu(){
+        mypageMapper.deleteEducation(6L);
+    }
 
 }

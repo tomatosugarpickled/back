@@ -47,7 +47,7 @@ const careerDescription = document.getElementById("career-desc");
 let memberId = null;
 const memberIdInput = document.getElementById("member-id");
 const closeCareerModal = document.getElementById("career-modal");
-const modalInput = document.querySelector(".modal-container");
+const modalInput = document.querySelectorAll(".modal-container");
 const careerContainer = document.querySelector('.user-content-history-content-wrap');
 
 
@@ -57,6 +57,7 @@ if(memberIdInput){
 
 
 myPageService.getCareerList(memberId, myPageLayout.showList);
+myPageEducationService.getEducationList(memberId, educationLayout.showList);
 
 registerBtn.addEventListener("click", async (e) => {
     await myPageService.careerRegister(
@@ -74,14 +75,12 @@ registerBtn.addEventListener("click", async (e) => {
         });
     await myPageService.getCareerList(memberId, myPageLayout.showList);
 
-    modalInput.querySelectorAll("input", "textarea", "select").forEach(input => {
-        if(input.type === "select"){
-            input.selectedIndex = 0;
-        } else {
-            input.value = "";
-        }
+    modalInput.forEach(modal => {
+        modal.querySelectorAll("input, textarea").forEach(el => el.value = "");
+        modal.querySelectorAll("select").forEach(el => el.selectedIndex = 0);
+
+        closeCareerModal.style.display = "none";
     });
-    closeCareerModal.style.display = "none";
 })
 
 
@@ -107,7 +106,7 @@ const eduStartMonth = document.getElementById("edu-start-month");
 const eduEndMonth = document.getElementById("edu-end-month");
 const eduRegisterBtn = document.getElementById("save-edu-btn");
 const closeEduModal = document.getElementById("education-modal");
-
+const eduContainer = document.querySelector('.user-content-education-content-wrap');
 
 
 
@@ -123,20 +122,28 @@ eduRegisterBtn.addEventListener("click", async (e) => {
         startMonth : eduStartMonth.value,
         endMonth : eduEndMonth.value,
         memberId : memberId
-
     })
+    await myPageEducationService.getEducationList(memberId, educationLayout.showList)
 
     console.log(eduStartYear.value)
     console.log(eduEndYear.value)
     console.log(eduStartMonth.value)
     console.log(eduEndMonth.value)
 
-    modalInput.querySelectorAll("input", "textarea", "select").forEach(input => {
-        if(input.type === "select"){
-            input.selectedIndex = 0;
-        } else {
-            input.value = "";
-        }
+    modalInput.forEach(modal => {
+        modal.querySelectorAll("input, textarea").forEach(el => el.value = "");
+        modal.querySelectorAll("select").forEach(el => el.selectedIndex = 0);
+
+        closeEduModal.style.display = "none";
     });
-    closeEduModal.style.display = "none";
+})
+
+eduContainer.addEventListener("click", async (e) => {
+    e.preventDefault();
+    const educationId = e.target.dataset.id;
+
+    if(e.target.classList.contains("education-delete-btn")){
+        await myPageEducationService.deleteEducation(educationId)
+        await myPageEducationService.getEducationList(memberId, educationLayout.showList);
+    }
 })

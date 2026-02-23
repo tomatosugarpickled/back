@@ -4,6 +4,7 @@ import com.app.candm.dto.member.MemberDTO;
 import com.app.candm.dto.mypage.MemberCareerDTO;
 import com.app.candm.dto.mypage.MemberEducationDTO;
 import com.app.candm.dto.mypage.MemberWithCareerDTO;
+import com.app.candm.dto.mypage.MemberWithEducationDTO;
 import com.app.candm.service.mypage.MyPageService;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
@@ -47,7 +48,7 @@ public class MyPageController {
         myPageService.regist(memberCareerDTO);
     }
 
-    @GetMapping("{memberId}")
+    @GetMapping("career/{memberId}")
     @ResponseBody
     public MemberWithCareerDTO careerList(@PathVariable Long memberId){
         return myPageService.getCareerByMemberId(memberId);
@@ -75,6 +76,15 @@ public class MyPageController {
         myPageService.regist(memberEducationDTO);
     }
 
+    @GetMapping("education/{memberId}")
+    @ResponseBody
+    public MemberWithEducationDTO educationList(@PathVariable Long memberId){
+        return myPageService.getEducationByMemberId(memberId);
+    }
 
+    @DeleteMapping("education/{id}")
+    public void deleteEducation(@PathVariable Long id){
+        myPageService.deleteEducation(id);
+    }
 
 }

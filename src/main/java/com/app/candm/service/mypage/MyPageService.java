@@ -6,6 +6,7 @@ import com.app.candm.dto.member.MemberDTO;
 import com.app.candm.dto.mypage.MemberCareerDTO;
 import com.app.candm.dto.mypage.MemberEducationDTO;
 import com.app.candm.dto.mypage.MemberWithCareerDTO;
+import com.app.candm.dto.mypage.MemberWithEducationDTO;
 import com.app.candm.repository.mypage.MemberCareerDAO;
 import com.app.candm.repository.mypage.MemberEducationDAO;
 import lombok.RequiredArgsConstructor;
@@ -60,8 +61,25 @@ public class MyPageService {
     }
 
 //    ==================================================학력=============================================================
+
+//   학력 등록
     public void regist(MemberEducationDTO memberEducationDTO){
         memberEducationDAO.save(memberEducationDTO.toMemberEducationVO());
+    }
+
+//   학력 목록
+    public MemberWithEducationDTO getEducationByMemberId(Long id){
+        MemberWithEducationDTO memberWithEducationDTO = new MemberWithEducationDTO();
+        List<MemberEducationDTO> educations = memberEducationDAO.findEducationByMemberId(id);
+
+        memberWithEducationDTO.setEducations(educations);
+        memberWithEducationDTO.setMemberId(id);
+        return memberWithEducationDTO;
+    }
+
+//    학력 삭제
+    public void deleteEducation(Long id){
+        memberEducationDAO.delete(id);
     }
 
 }

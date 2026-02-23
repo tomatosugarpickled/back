@@ -21,6 +21,7 @@
         delete from tbl_member_career
         where id = #{id}
     </delete>
+
 <!--====================================================학력===========================================================-->
 
 <!--학력 추가-->
@@ -28,6 +29,20 @@
         insert into tbl_education(education_title, education_type, education_major, education_graduation, intro_detailed, start_date, end_date, member_id)
         values (#{educationTitle}, #{educationType}, #{educationMajor}, #{educationGraduation}, #{introDetailed}, #{startDate}, #{endDate}, #{memberId} )
     </insert>
+
+<!--    학력 조회-->
+    <select id="selectEducationByMemberId">
+        select e.id, e.education_title, e.education_type, e.education_major, e.education_graduation, e.intro_detailed, e.start_date, e.end_date, e.member_id, e.created_datetime, e.updated_datetime, m.id
+        from tbl_education e join tbl_member m
+        on e.member_id = m.id
+        where e.member_id = #{memberId}
+    </select>
+
+<!--    삭제-->
+    <delete id="deleteEducation">
+        delete from tbl_education
+        where id = #{id}
+    </delete>
 
 
 </mapper>

@@ -1,7 +1,7 @@
 const myPageLayout = (() => {
     const showList = (data) => {
         const careerContainer = document.querySelector('.user-content-history-content-wrap');
-        careerContainer.classList.add("user-content-history-content-wrap-career-ok")
+        careerContainer.classList.add("user-content-history-content-wrap-ok")
         // careerContainer.classList.remove("user-content-history-content-wrap")
         let text = ``;
         const careers = data.careers;
@@ -30,7 +30,7 @@ const myPageLayout = (() => {
             </button>
         `
         } else {
-            careerContainer.classList.remove("user-content-history-content-wrap-career-ok")
+            careerContainer.classList.remove("user-content-history-content-wrap-ok")
             text += `
             <div class="user-content-history-content-wrap">
                 <div class="user-content-history-content-div-wrap">

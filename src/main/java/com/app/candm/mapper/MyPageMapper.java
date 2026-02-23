@@ -4,6 +4,7 @@ import com.app.candm.domain.MemberCareerVO;
 import com.app.candm.domain.MemberEducationVO;
 import com.app.candm.dto.member.MemberDTO;
 import com.app.candm.dto.mypage.MemberCareerDTO;
+import com.app.candm.dto.mypage.MemberEducationDTO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -30,5 +31,10 @@ public interface MyPageMapper {
 //    추가
     public void educationInsert(MemberEducationVO memberEducationVO);
 
+//    목록
+    public List<MemberEducationDTO> selectEducationByMemberId(@Param("memberId") Long id);
+
+//    삭제
+    public void deleteEducation(Long id);
 
 }

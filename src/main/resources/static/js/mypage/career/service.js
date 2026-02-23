@@ -13,7 +13,7 @@ const myPageService = (() => {
 
     // 목록
     const getCareerList = async (memberId, callback) => {
-        const response = await fetch(`/mypage/${memberId}`);
+        const response = await fetch(`/mypage/career/${memberId}`);
         const data = await response.json();
         if(callback){
             callback(data);
