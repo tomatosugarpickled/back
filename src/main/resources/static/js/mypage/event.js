@@ -46,21 +46,20 @@ const careerRole = document.getElementById("career-role");
 const careerDescription = document.getElementById("career-desc");
 let memberId = null;
 const memberIdInput = document.getElementById("member-id");
-const closeModal = document.getElementById("career-modal");
-const careerInput = document.querySelector(".modal-container");
+const closeCareerModal = document.getElementById("career-modal");
+const modalInput = document.querySelector(".modal-container");
 const careerContainer = document.querySelector('.user-content-history-content-wrap');
 
-console.log(careerInput)
 
 if(memberIdInput){
     memberId = memberIdInput.value;
 }
 
 
-myPageService.getList(memberId, myPageLayout.showList);
+myPageService.getCareerList(memberId, myPageLayout.showList);
 
 registerBtn.addEventListener("click", async (e) => {
-    await myPageService.register(
+    await myPageService.careerRegister(
         {
             affiliationTitle : affilationTitle.value,
             memberEmploymentType : careerType.value,
@@ -73,16 +72,16 @@ registerBtn.addEventListener("click", async (e) => {
             introDetailed : careerDescription.value,
             memberId : memberId
         });
-    await myPageService.getList(memberId, myPageLayout.showList);
+    await myPageService.getCareerList(memberId, myPageLayout.showList);
 
-    careerInput.querySelectorAll("input", "textarea", "select").forEach(input => {
+    modalInput.querySelectorAll("input", "textarea", "select").forEach(input => {
         if(input.type === "select"){
             input.selectedIndex = 0;
         } else {
             input.value = "";
         }
     });
-    closeModal.style.display = "none";
+    closeCareerModal.style.display = "none";
 })
 
 
@@ -92,6 +91,52 @@ careerContainer.addEventListener("click", async (e) => {
 
     if(e.target.classList.contains("career-delete-btn")){
         await myPageService.deleteCareer(careerId);
-        await myPageService.getList(memberId, myPageLayout.showList);
+        await myPageService.getCareerList(memberId, myPageLayout.showList);
     }
+})
+
+
+const educationTitle = document.getElementById("edu-school");
+const educationType = document.getElementById("edu-type");
+const educationMajor = document.getElementById("edu-major");
+const educationGraduation = document.getElementById("edu-status");
+const eduIntro = document.getElementById("edu-desc");
+const eduStartYear = document.getElementById("edu-start-year");
+const eduEndYear = document.getElementById("edu-end-year");
+const eduStartMonth = document.getElementById("edu-start-month");
+const eduEndMonth = document.getElementById("edu-end-month");
+const eduRegisterBtn = document.getElementById("save-edu-btn");
+const closeEduModal = document.getElementById("education-modal");
+
+
+
+
+eduRegisterBtn.addEventListener("click", async (e) => {
+    await myPageEducationService.educationRegister({
+        educationTitle : educationTitle.value,
+        educationType : educationType.value,
+        educationMajor : educationMajor.value,
+        educationGraduation : educationGraduation.value,
+        introDetailed : eduIntro.value,
+        startYear : eduStartYear.value,
+        endYear : eduEndYear.value,
+        startMonth : eduStartMonth.value,
+        endMonth : eduEndMonth.value,
+        memberId : memberId
+
+    })
+
+    console.log(eduStartYear.value)
+    console.log(eduEndYear.value)
+    console.log(eduStartMonth.value)
+    console.log(eduEndMonth.value)
+
+    modalInput.querySelectorAll("input", "textarea", "select").forEach(input => {
+        if(input.type === "select"){
+            input.selectedIndex = 0;
+        } else {
+            input.value = "";
+        }
+    });
+    closeEduModal.style.display = "none";
 })

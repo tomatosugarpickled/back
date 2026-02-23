@@ -23,12 +23,12 @@ public class MemberCareerDAO {
 
 //    목록
     public List<MemberCareerDTO> findCareerByMemberId(Long id){
-        return myPageMapper.selectAllByMemberId(id);
+        return myPageMapper.selectCareerByMemberId(id);
     }
 
 //    삭제
     public void delete(Long id){
-        myPageMapper.delete(id);
+        myPageMapper.deleteCareer(id);
     }
 
 }

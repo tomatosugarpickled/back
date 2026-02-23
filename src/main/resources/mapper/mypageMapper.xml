@@ -9,7 +9,7 @@
     </insert>
 
 <!--    목록 조회-->
-    <select id="selectAllByMemberId">
+    <select id="selectCareerByMemberId">
         select c.id, c.affiliation_title, c.member_employment_type, c.member_role, c.member_skill, c.intro_detailed, c.start_date, c.end_date, c.member_id, c.created_datetime, c.updated_datetime, m.id
         from tbl_member_career c join tbl_member m
         on c.member_id = m.id
@@ -17,10 +17,17 @@
     </select>
 
 <!--    삭제-->
-    <delete id="delete">
+    <delete id="deleteCareer">
         delete from tbl_member_career
         where id = #{id}
     </delete>
+<!--====================================================학력===========================================================-->
+
+<!--학력 추가-->
+    <insert id="educationInsert" useGeneratedKeys="true" keyProperty="id">
+        insert into tbl_education(education_title, education_type, education_major, education_graduation, intro_detailed, start_date, end_date, member_id)
+        values (#{educationTitle}, #{educationType}, #{educationMajor}, #{educationGraduation}, #{introDetailed}, #{startDate}, #{endDate}, #{memberId} )
+    </insert>
 
 
 </mapper>

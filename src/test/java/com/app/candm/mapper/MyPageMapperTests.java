@@ -1,7 +1,9 @@
 package com.app.candm.mapper;
 
 import com.app.candm.domain.MemberCareerVO;
+import com.app.candm.domain.MemberEducationVO;
 import com.app.candm.dto.mypage.MemberCareerDTO;
+import com.app.candm.dto.mypage.MemberEducationDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,13 +42,29 @@ public class MyPageMapperTests {
     public void testFindById(){
 //        Optional<MemberCareerDTO> foundCareer = mypageMapper.selectById(5L);
 //        log.info("{},,,,,,,,,,,,,,,,,", foundCareer.isEmpty());
-        List<MemberCareerDTO> careers = mypageMapper.selectAllByMemberId(4L);
+        List<MemberCareerDTO> careers = mypageMapper.selectCareerByMemberId(4L);
         log.info("{},,,,,,,,,,,,,,,,,",careers);
     }
 
     @Test
     public void testDelete(){
-        mypageMapper.delete(30L);
+        mypageMapper.deleteCareer(30L);
+    }
+//==========================================학력===========================================================
+    @Test
+    public void testEducationInsert(){
+        MemberEducationDTO memberEducationDTO = new MemberEducationDTO();
+
+        memberEducationDTO.setEducationTitle("인하대학교");
+        memberEducationDTO.setEducationType("대학교");
+        memberEducationDTO.setEducationMajor("전자학");
+        memberEducationDTO.setEducationGraduation("휴학");
+        memberEducationDTO.setIntroDetailed("잘다님");
+        memberEducationDTO.setStartDate("2018-03");
+        memberEducationDTO.setEndDate("2020-03");
+        memberEducationDTO.setMemberId(4L);
+
+        mypageMapper.educationInsert(memberEducationDTO.toMemberEducationVO());
     }
 
 

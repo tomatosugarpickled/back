@@ -1,8 +1,8 @@
 const myPageService = (() => {
 
 //     추가
-    const register = async (career) => {
-        await fetch('/mypage/regist', {
+    const careerRegister = async (career) => {
+        await fetch('/mypage/career/regist', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -12,7 +12,7 @@ const myPageService = (() => {
     }
 
     // 목록
-    const getList = async (memberId, callback) => {
+    const getCareerList = async (memberId, callback) => {
         const response = await fetch(`/mypage/${memberId}`);
         const data = await response.json();
         if(callback){
@@ -25,5 +25,5 @@ const myPageService = (() => {
         await fetch(`/mypage/${careerId}`, {method: 'DELETE'});
     }
 
-    return {register: register, getList: getList, deleteCareer: deleteCareer};
+    return {careerRegister: careerRegister, getCareerList: getCareerList, deleteCareer: deleteCareer};
 })();

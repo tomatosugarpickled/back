@@ -6,8 +6,6 @@ const myPageLayout = (() => {
         let text = ``;
         const careers = data.careers;
 
-        console.log(careers)
-
         if(memberId!==null && careers.length !== 0) {
             careers.forEach(career => {
                 text += `<div class="career-card">

@@ -13,3 +13,7 @@ create table tbl_member
 );
 
 select * from tbl_member;
+
+select *
+from tbl_member join tbl_member_career
+on tbl_member.id = tbl_member_career.member_id;

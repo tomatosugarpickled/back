@@ -2,8 +2,8 @@ package com.app.candm.controller.mypage;
 
 import com.app.candm.dto.member.MemberDTO;
 import com.app.candm.dto.mypage.MemberCareerDTO;
+import com.app.candm.dto.mypage.MemberEducationDTO;
 import com.app.candm.dto.mypage.MemberWithCareerDTO;
-import com.app.candm.service.member.MemberService;
 import com.app.candm.service.mypage.MyPageService;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
@@ -11,7 +11,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.view.RedirectView;
 
 @Controller
 @RequiredArgsConstructor
@@ -33,8 +32,8 @@ public class MyPageController {
         return "/mypage/mypage";
     }
 
-
-    @PostMapping("regist")
+//===================================================경력====================================================================
+    @PostMapping("career/regist")
     @ResponseBody
     public void careerRegist(@RequestBody  MemberCareerDTO memberCareerDTO){
 
@@ -58,5 +57,24 @@ public class MyPageController {
     public void deleteCareer(@PathVariable Long id){
         myPageService.delete(id);
     }
+//=================================================학력=================================================================
+    @PostMapping("education/regist")
+    @ResponseBody
+    public void educationRegist(@RequestBody MemberEducationDTO memberEducationDTO){
+
+        String startDate = memberEducationDTO.getStartYear() + "-" + memberEducationDTO.getStartMonth();
+        String endDate = memberEducationDTO.getEndYear() + "-" + memberEducationDTO.getEndMonth();
+
+        log.info("{}", startDate);
+        log.info("{}", endDate);
+
+        memberEducationDTO.setStartDate(startDate);
+        memberEducationDTO.setEndDate(endDate);
+
+        log.info("memberEducationDTO : {}",memberEducationDTO);
+        myPageService.regist(memberEducationDTO);
+    }
+
+
 
 }

@@ -4,8 +4,10 @@ import com.app.candm.domain.MemberCareerVO;
 import com.app.candm.domain.MemberVO;
 import com.app.candm.dto.member.MemberDTO;
 import com.app.candm.dto.mypage.MemberCareerDTO;
+import com.app.candm.dto.mypage.MemberEducationDTO;
 import com.app.candm.dto.mypage.MemberWithCareerDTO;
 import com.app.candm.repository.mypage.MemberCareerDAO;
+import com.app.candm.repository.mypage.MemberEducationDAO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -20,6 +22,7 @@ import java.util.Optional;
 @Slf4j
 public class MyPageService {
     private final MemberCareerDAO memberCareerDAO;
+    private final MemberEducationDAO memberEducationDAO;
 
 //    경력 등록
     public void regist(MemberCareerDTO memberCareerDTO){
@@ -35,7 +38,7 @@ public class MyPageService {
         return memberWithCareerDTO;
     }
 
-//    삭제
+//    경력삭제
     public void delete(Long id){
         memberCareerDAO.delete(id);
     }
@@ -54,6 +57,11 @@ public class MyPageService {
         memberCareerDTO.setCreatedDatetime(memberCareerVO.getCreatedDatetime());
         memberCareerDTO.setUpdatedDatetime(memberCareerVO.getUpdatedDatetime());
         return memberCareerDTO;
+    }
+
+//    ==================================================학력=============================================================
+    public void regist(MemberEducationDTO memberEducationDTO){
+        memberEducationDAO.save(memberEducationDTO.toMemberEducationVO());
     }
 
 }
