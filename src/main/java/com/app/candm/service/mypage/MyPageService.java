@@ -115,6 +115,7 @@ public class MyPageService {
             fileDAO.save(fileDTO);
 
             memberActivityFileDTO.setId(fileDTO.getId());
+            memberActivityFileDTO.setMemberId(memberActivityDTO.getMemberId());
             memberActivityFileDAO.save(memberActivityFileDTO.toMemberActivityFileVO());
             File directory = new File(rootPath + "/" + fileDTO.getFilePath());
             if(!directory.exists()){

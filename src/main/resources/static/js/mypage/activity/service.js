@@ -1,15 +1,15 @@
-mypageActivityService = (() => {
+myPageActivityService = (() => {
 
 //     추가
-    const activityRegister = async (activity) => {
+    const activityRegister = async (formData) => {
         await fetch('/mypage/activity/regist', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(activity)
+            body: formData
         })
     }
 
-    return {activityRegister: activityRegister}
+    // 목록
+    const getActivityList = async (memberId, callback) => {}
+
+    return {activityRegister: activityRegister, getActivityList: getActivityList}
 })();

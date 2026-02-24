@@ -87,7 +87,7 @@ public class MyPageController {
 //    ================================================활동====================================================
     @PostMapping("activity/regist")
     @ResponseBody
-    public void activityRegist(@RequestBody MemberActivityDTO memberActivityDTO, @RequestParam("file") ArrayList<MultipartFile> multipartFiles){
+    public void activityRegist(MemberActivityDTO memberActivityDTO, @RequestParam(value = "file", required = false) ArrayList<MultipartFile> multipartFiles){
         String startDate = memberActivityDTO.getStartYear() + "-" + memberActivityDTO.getStartMonth();
         String endDate = memberActivityDTO.getEndYear() + "-" + memberActivityDTO.getEndMonth();
 
@@ -95,6 +95,7 @@ public class MyPageController {
         memberActivityDTO.setEndDate(endDate);
 
         log.info("memberEducationDTO : {}",memberActivityDTO);
+        log.info("multipartFiles : {}",multipartFiles != null ? multipartFiles.size() : 0);
 
         myPageService.regist(memberActivityDTO, multipartFiles);
     }
