@@ -45,7 +45,6 @@ public class MyPageController {
         memberCareerDTO.setStartDate(startDate);
         memberCareerDTO.setEndDate(endDate);
 
-        log.info("memberCareerDTO : {}",memberCareerDTO.getMemberId());
         myPageService.regist(memberCareerDTO);
     }
 
@@ -56,9 +55,12 @@ public class MyPageController {
     }
 
     @DeleteMapping("{id}")
+    @ResponseBody
     public void deleteCareer(@PathVariable Long id){
         myPageService.delete(id);
     }
+
+
 //=================================================학력=================================================================
     @PostMapping("education/regist")
     @ResponseBody
@@ -70,7 +72,6 @@ public class MyPageController {
         memberEducationDTO.setStartDate(startDate);
         memberEducationDTO.setEndDate(endDate);
 
-        log.info("memberEducationDTO : {}",memberEducationDTO);
         myPageService.regist(memberEducationDTO);
     }
 
@@ -81,6 +82,7 @@ public class MyPageController {
     }
 
     @DeleteMapping("education/{id}")
+    @ResponseBody
     public void deleteEducation(@PathVariable Long id){
         myPageService.deleteEducation(id);
     }
@@ -92,9 +94,6 @@ public class MyPageController {
         String startDate = memberActivityDTO.getStartYear() + "-" + memberActivityDTO.getStartMonth();
         memberActivityDTO.setStartDate(startDate);
 
-        log.info("memberActivityDTO : {}",memberActivityDTO);
-        log.info("multipartFiles : {}",multipartFiles != null ? multipartFiles.size() : 0);
-
         myPageService.regist(memberActivityDTO, multipartFiles);
     }
 
@@ -102,5 +101,10 @@ public class MyPageController {
     @ResponseBody
     public List<MemberActivityDTO> activityList(@PathVariable Long memberId){
         return myPageService.getActivityByMemberId(memberId);
+    }
+    @DeleteMapping("activity/{id}")
+    @ResponseBody
+    public void deleteActivity(@PathVariable Long id){
+        myPageService.deleteActivity(id);
     }
 }

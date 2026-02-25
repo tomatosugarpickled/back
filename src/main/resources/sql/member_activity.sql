@@ -12,3 +12,7 @@ create table tbl_member_activity (
 );
 
 select * from tbl_member_activity;
+
+
+
+

@@ -26,5 +26,10 @@ myPageActivityService = (() => {
 
     }
 
-    return {activityRegister: activityRegister, getActivityList: getActivityList}
+    const activityRemove = async (activityId) => {
+        await fetch(`/mypage/activity/${activityId}`, {
+            method: 'DELETE'});
+    }
+
+    return {activityRegister: activityRegister, getActivityList: getActivityList, activityRemove: activityRemove}
 })();

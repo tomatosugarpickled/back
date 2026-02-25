@@ -15,4 +15,15 @@
         from view_activity_file
         where member_activity_id = #{memberActivityId}
     </select>
+
+    <delete id="delete">
+        delete from tbl_activity_file
+        where id = #{id}
+    </delete>
+
+    <delete id="deleteByActivityId">
+        delete from tbl_activity_file
+        where member_activity_id = #{memberActivityId}
+    </delete>
+
 </mapper>
