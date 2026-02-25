@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Mapper
-public interface FundingRegistMapper {
+public interface FundingMapper {
     // 펀딩 추가
     public void insert(FundingDTO fundingDTO);
 

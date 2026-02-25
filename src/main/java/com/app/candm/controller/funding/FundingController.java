@@ -25,38 +25,30 @@ public class FundingController {
 
     /* ================= 펀딩 등록 ================= */
 
-    @GetMapping("/funding-regist")
+    @GetMapping("/funding-regist-page")
     public String goToRegisterForm(@RequestParam("teamId") Long teamId, Model model) {
         FundingDTO dto = new FundingDTO();
         dto.setTeamId(teamId);
         model.addAttribute("fundingDTO", dto);
-        return "funding/funding-regist";
+        return "funding/funding-regist-page";
     }
 
-    @PostMapping("/funding-regist")
+    @PostMapping("/funding-regist-page")
     public RedirectView register(FundingDTO fundingDTO) {
         fundingService.register(fundingDTO);
 
-        // 🔥 funding/funding-list 로 이동
-        return new RedirectView("/funding/funding-list?teamId=" + fundingDTO.getTeamId());
+        //  funding/funding-list 로 이동
+        return new RedirectView("/funding/funding-list-page?teamId=" + fundingDTO.getTeamId());
     }
 
     /* ================= 펀딩 목록 ================= */
 
-    @GetMapping("/funding-list")
+    @GetMapping("/funding-list-page")
     public String showFundingList(@RequestParam("teamId") Long teamId, Model model) {
         List<FundingDTO> fundingList = fundingService.getListByTeam(teamId);
         model.addAttribute("fundingList", fundingList);
         model.addAttribute("teamId", teamId);
-        return "funding/funding-list";
+        return "funding/funding-list-page";
     }
 
-    /* ================= 펀딩 상세 ================= */
-
-    @GetMapping("/funding-detail")
-    public String showFundingDetail(@RequestParam("fundingId") Long fundingId, Model model) {
-        FundingVO funding = fundingService.getFunding(fundingId);
-        model.addAttribute("funding", funding);
-        return "funding/funding-detail";
-    }
 }
