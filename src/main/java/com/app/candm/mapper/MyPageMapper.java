@@ -45,6 +45,12 @@ public interface MyPageMapper {
     public void activityInsert(MemberActivityDTO memberActivityDTO);
 
 //    목록
-    public List<MemberActivityDTO> selectActivityByMemberId(@Param("memberId") Long idd);
+    public List<MemberActivityDTO> selectActivityByMemberId(@Param("memberId") Long id);
+
+//    조회
+    public Optional<MemberActivityDTO> selectActivityById(Long id);
+
+//    삭제
+    public void deleteActivity(Long id);
 
 }

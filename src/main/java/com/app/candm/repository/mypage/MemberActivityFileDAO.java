@@ -24,4 +24,9 @@ public class MemberActivityFileDAO {
         return memberActivityFileMapper.selectAllByMemberId(id);
     }
 
+//    삭제
+    public void deleteByActivityId(Long id){
+        memberActivityFileMapper.deleteByActivityId(id);
+    }
+
 }

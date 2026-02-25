@@ -163,4 +163,22 @@ public class MyPageMapperTests {
 
         log.info("{},,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,",activities);
     }
+
+    @Test
+    public void testSelectActivityById(){
+        MemberActivityDTO activity = mypageMapper.selectActivityById(26L)
+                .orElseThrow(() -> new RuntimeException("데이터 없음!"));
+        log.info("조회된 결과: {}", activity.toString());
+    }
+
+    @Test
+    public void testDeleteActivity(){
+        MemberActivityDTO activity = mypageMapper.selectActivityById(26L).orElseThrow();
+        MemberActivityFileDTO file =
+
+        mypageMapper.deleteActivity(activity.getId());
+        memberActivityFileMapper.deleteByActivityId(activity.getId());
+        fileMapper.delete();
+    }
+
 }

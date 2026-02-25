@@ -21,9 +21,11 @@ const activityLayout = (() => {
                         
                         ${activity.activityFiles && activity.activityFiles.length > 0 ? `
                             <div class="activity-images">
-                                ${activity.activityFiles.map(file => `
-                                    <img src="${file.filePath}" alt="${file.fileOriginalName}" class="activity-image">
-                                `).join('')}
+                                ${activity.activityFiles.map(file => { 
+                                    const displayUrl = `/api/files/display?filePath=${encodeURIComponent(file.filePath)}&fileName=${encodeURIComponent(file.fileName)}`;
+                                 return   `
+                                    <img src="${displayUrl}" id="${file.id}" alt="${file.fileOriginalName}" class="activity-image">
+                                `}).join('')}
                             </div>
                         ` : ''}
                         
