@@ -59,6 +59,17 @@
         where ma.member_id = #{memberId}
     </select>
 
+    <select id="selectActivityById">
+        select
+            distinct
+               m.id, m.member_email, m.member_name,
+               ma.id, ma.award_title, ma.activity_type, ma.start_date,
+               ma.member_id, ma.created_datetime, ma.updated_datetime
+        from tbl_member m join tbl_member_activity ma
+        on m.id = ma.member_id
+        where ma.id = #{id}
+    </select>
+
     <delete id="deleteActivity">
         delete from tbl_member_activity
         where id = #{id}

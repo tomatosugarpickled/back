@@ -12,5 +12,8 @@ public interface MemberActivityFileMapper {
     public void insert(MemberActivityFileVO memberActivityFileVO);
 //    목록
     public List<MemberActivityFileDTO> selectAllByMemberId(Long id);
+//    삭제
+    public void delete(Long id);
 
+    public void deleteByActivityId(Long id);
 }

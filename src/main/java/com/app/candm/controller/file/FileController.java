@@ -1,4 +1,4 @@
-package com.app.candm.controller.mypage;
+package com.app.candm.controller.file;
 
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.GetMapping;

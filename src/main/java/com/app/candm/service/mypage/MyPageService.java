@@ -162,4 +162,34 @@ public class MyPageService {
         return activities;
     }
 
+//    활동내역 삭제
+
+    public void deleteActivity(Long id){
+//        log.info("{들어옴1}");
+//        memberActivityFileDAO.findAllByMemberId(id).forEach(memberActivityFileDTO -> {
+//            File file = new File("C:/file/" + memberActivityFileDTO.getFilePath(), memberActivityFileDTO.getFileName());
+//            if(file.exists()){
+//                log.info("{들어옴2}");
+//                file.delete();
+//            }
+//
+//            Long fileId = memberActivityFileDTO.getId();
+//            memberActivityFileDAO.deleteByActivityId(fileId);
+//            fileDAO.delete(fileId);
+//        });
+//        memberActivityDAO.delete(id);
+        List<MemberActivityFileDTO> files = memberActivityFileDAO.findAllByMemberId(id);
+        files.forEach(memberActivityFileDTO -> {
+            File file = new File("C:/file/" + memberActivityFileDTO.getFilePath(), memberActivityFileDTO.getFileName());
+                if(file.exists()){
+                    file.delete();
+                    }
+        });
+        memberActivityFileDAO.deleteByActivityId(id);
+
+        files.forEach(fileDTO -> fileDAO.delete(fileDTO.getId()));
+
+        memberActivityDAO.delete(id);
+    }
+
 }

@@ -25,6 +25,11 @@ const educationLayout = (() => {
                         </div>
                     </div>`;
             })
+            text += `
+                <button type="button" class="education-button-wrap">
+                    <span class="user-content-history-registration-word">등록하기</span>
+                </button>
+            `
         } else {
             educationContainer.classList.remove("user-content-history-content-wrap-ok")
             text += `

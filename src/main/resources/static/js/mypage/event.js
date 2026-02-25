@@ -156,6 +156,7 @@ const actStartMonth = document.getElementById("activity-start-month");
 const activityFile = document.getElementById("activity-skills");
 const activityRegisterBtn = document.getElementById("save-activity-btn");
 const activityModal = document.getElementById("setting-modal");
+const activityContainer = document.querySelector('.user-content-activity-content-wrap');
 
 activityRegisterBtn.addEventListener("click", async (e) => {
     e.preventDefault();
@@ -196,6 +197,16 @@ activityRegisterBtn.addEventListener("click", async (e) => {
 
         activityModal.style.display = "none";
     });
+})
+
+activityContainer.addEventListener("click", async (e) => {
+    e.preventDefault();
+    const activityId = e.target.dataset.id;
+
+    if(e.target.classList.contains("activity-delete-btn")){
+        await myPageActivityService.activityRemove(activityId);
+        await myPageActivityService.getActivityList(memberId, activityLayout.showList);
+    }
 })
 
 
