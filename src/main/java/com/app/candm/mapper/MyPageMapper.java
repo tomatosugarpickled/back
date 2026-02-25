@@ -42,7 +42,7 @@ public interface MyPageMapper {
 //    ====================================================활동내역==================================================
 
 //    추가
-    public void activityInsert(MemberActivityVO memberActivityVO);
+    public void activityInsert(MemberActivityDTO memberActivityDTO);
 
 //    목록
     public List<MemberActivityDTO> selectActivityByMemberId(@Param("memberId") Long idd);

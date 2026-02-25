@@ -11,8 +11,8 @@
             id, file_path, file_name,
             file_original_name, file_size,
             file_content_type, created_datetime, updated_datetime,
-            member_id
+            member_id, member_activity_id
         from view_activity_file
-        where member_id = #{id}
+        where member_activity_id = #{memberActivityId}
     </select>
 </mapper>

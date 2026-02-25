@@ -15,10 +15,11 @@ select * from tbL_activity_file;
 
 create view view_activity_file as
 (
-select f.id, member_id, file_path, file_name, file_original_name, file_size, file_content_type, created_datetime, updated_datetime
+select f.id, af.member_id,af.member_activity_id, file_path, file_name, file_original_name, file_size, file_content_type, f.created_datetime, f.updated_datetime
 from tbl_file f join tbl_activity_file af
-on f.id = af.id );
+on f.id = af.id
+join tbl_member_activity ma
+on af.member_activity_id = ma.id);
 
-select * from view_activity_file
-where member_id = 5;
+select * from view_activity_file;
 drop VIEW view_activity_file;

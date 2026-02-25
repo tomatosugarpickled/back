@@ -136,7 +136,7 @@ public class MyPageMapperTests {
         memberActivityDTO.setMemberId(4L);
         memberActivityDTO.setActivityFiles(fileList);
 
-        mypageMapper.activityInsert(memberActivityDTO.toMemberActivityVO()); // 🔥 실제 저장 호출
+        mypageMapper.activityInsert(memberActivityDTO); // 🔥 실제 저장 호출
     }
 
     @Test

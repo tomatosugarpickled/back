@@ -32,8 +32,14 @@ const activityLayout = (() => {
                                data-id="${activity.id}" 
                                class="activity-delete-btn">삭제</a>
                         </div>
-                    </div>`;
+                    </div>
+                    `;
            })
+           text += `
+                        <button type="button" class="activity-button">
+                            <span class="user-content-history-registration-word">등록하기</span>
+                        </button>
+                    `
        } else {
            activityContainer.classList.remove("user-content-history-content-wrap-ok")
            text += `

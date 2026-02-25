@@ -92,7 +92,7 @@ public class MyPageController {
         String startDate = memberActivityDTO.getStartYear() + "-" + memberActivityDTO.getStartMonth();
         memberActivityDTO.setStartDate(startDate);
 
-        log.info("memberEducationDTO : {}",memberActivityDTO);
+        log.info("memberActivityDTO : {}",memberActivityDTO);
         log.info("multipartFiles : {}",multipartFiles != null ? multipartFiles.size() : 0);
 
         myPageService.regist(memberActivityDTO, multipartFiles);

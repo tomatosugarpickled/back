@@ -15,7 +15,4 @@ public class MemberActivityVO extends Period {
     private String activityType;
     private String startDate;
     private Long memberId;
-    public void setId(Long id) {
-        this.id = id;
-    }
 }
