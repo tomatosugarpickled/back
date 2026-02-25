@@ -54,7 +54,6 @@
                                             <span class="user-certification-word">인증</span>
                                         </div>
                                     </div>
-                                    <p class="user-nickname-job-word">CEO at Tesla & SpaceX · 10년 이상</p>
                                 </div>
                             </div>
                             <div class="user-status-wrap">
@@ -119,7 +118,7 @@
                                             <div class="fead-profile">
                                                 <div class="feed-profile-container">
                                                     <div class="feed-profile-wrapper">
-                                                        <img src="https://i.pravatar.cc/150?img=12" alt="Elon Musk">
+                                                        <img src="/image/profiles/basicprofile.jpg" alt="profile-img" class="pro-img">
                                                     </div>
                                                 </div>
                                             </div>
@@ -128,12 +127,11 @@
                                                     <div class="feed-header-info-name-section">
                                                         <div class="feed-header-info-name-wrapper">
                                                             <div class="feed-header-info-name">
-                                                                <p class="name-tag">Elon Musk</p>
+                                                                <p class="name-tag" th:text="${session.member.memberName}"></p>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="feed-header-info-date-section">
-                                                        <p class="feed-user-stack">CEO at Tesla & SpaceX</p>
                                                         <p class="feed-user-post-time">5시간전</p>
                                                     </div>
                                                 </div>
@@ -1063,6 +1061,12 @@
 <script th:inline="javascript">
     const memberCareer = [[${memberCareer}]];
 </script>
+<script th:inline="javascript">
+    <!--/*
+    const posts = [[${postsWithPaging.posts}]];
+    const criteria = [[${postsWithPaging.criteria}]];
+    */-->
+</script>
     <script src="/js/mypage/logo-carousel.js" defer></script>
     <script src="/js/mypage/tab-switch.js" defer></script>
     <script src="/js/mypage/mypage.js" defer></script>
@@ -1072,6 +1076,9 @@
 <script src="/js/mypage/career/layout.js"></script>
 <script src="/js/mypage/education/service.js"></script>
 <script src="/js/mypage/education/layout.js"></script>
+<script src="/js/mypage/post-list/service.js"></script>
+<script src="/js/mypage/post-list/layout.js"></script>
+<script src="/js/mypage/post-list/event.js"></script>
 <script src="/js/mypage/event.js"></script>
 <script src="/js/main/main.js"></script>
 </body>

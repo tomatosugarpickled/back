@@ -13,3 +13,5 @@ create table tbl_team
     constraint fk_member_id_team foreign key (member_id)
         references tbl_member (id)
 );
+
+select * from tbl_team;
