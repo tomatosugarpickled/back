@@ -19,7 +19,6 @@ public class MemberActivityDTO {
     private String startYear;
     private String startMonth;
     private Long memberId;
-    private Long memberActivityId;
     private String createdDatetime;
     private String updatedDatetime;
 

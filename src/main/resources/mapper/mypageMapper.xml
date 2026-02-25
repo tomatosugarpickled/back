@@ -46,7 +46,7 @@
 
 <!-- ===========================================================활동========================================================   -->
 
-    <insert id="activityInsert" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+    <insert id="activityInsert" parameterType="MemberActivityDTO" useGeneratedKeys="true" keyProperty="id">
         insert into tbl_member_activity(award_title, activity_type, start_date, member_id)
         values (#{awardTitle}, #{activityType}, #{startDate}, #{memberId})
     </insert>
@@ -58,5 +58,11 @@
         on ma.member_id = m.id
         where ma.member_id = #{memberId}
     </select>
+
+    <delete id="deleteActivity">
+        delete from tbl_member_activity
+        where id = #{id}
+    </delete>
+
 </mapper>
 

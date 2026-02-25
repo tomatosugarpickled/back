@@ -16,8 +16,8 @@ public class MemberActivityDAO {
     private final MyPageMapper myPageMapper;
 
 //    추가
-    public void save(MemberActivityVO memberActivityVO){
-        myPageMapper.activityInsert(memberActivityVO);
+    public void save(MemberActivityDTO memberActivityDTO){
+        myPageMapper.activityInsert(memberActivityDTO);
     }
 
 //    목록

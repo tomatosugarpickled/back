@@ -96,6 +96,7 @@ public class MyPageService {
 
 //    활동 등록(이미지 포함)
     public void regist(MemberActivityDTO memberActivityDTO, ArrayList<MultipartFile> multipartFiles){
+        log.info("input : {},,,,,,,,,,,,,,", memberActivityDTO);
         String rootPath = "C:/file/";
         String todayPath = getTodayPath();
         String path = rootPath + todayPath;
@@ -103,19 +104,15 @@ public class MyPageService {
         FileDTO fileDTO = new FileDTO();
         MemberActivityFileDTO memberActivityFileDTO = new MemberActivityFileDTO();
 
-        MemberActivityVO activityVO = memberActivityDTO.toMemberActivityVO();
-        memberActivityDAO.save(activityVO);
+        memberActivityDAO.save(memberActivityDTO);
+        Long generatedActivityId = memberActivityDTO.getId();
 
-        Long generatedActivityId = memberActivityDTO.getMemberActivityId();
         if (generatedActivityId == null) {
             throw new IllegalStateException(
                     "tbl_member_activity 저장 후 생성된 id를 받지 못했습니다. " +
                             "MyBatis activityInsert의 useGeneratedKeys/keyProperty/keyColumn 설정을 확인하세요."
             );
         }
-        // DTO에도 필요하면 동기화 (memberActivityId 필드를 계속 쓸 거라면)
-        memberActivityDTO.setMemberActivityId(generatedActivityId);
-        memberActivityDTO.setId(generatedActivityId);
 
         multipartFiles.forEach(multipartFile -> {
             if(multipartFile.getOriginalFilename().isEmpty()){
@@ -135,6 +132,7 @@ public class MyPageService {
 
             MemberActivityFileVO memberActivityFileVO = memberActivityFileDTO.toMemberActivityFileVO();
             memberActivityFileDAO.save(memberActivityFileVO);
+
 
             File directory = new File(rootPath + "/" + fileDTO.getFilePath());
             if(!directory.exists()){
