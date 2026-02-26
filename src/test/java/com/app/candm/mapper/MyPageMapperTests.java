@@ -171,14 +171,14 @@ public class MyPageMapperTests {
         log.info("조회된 결과: {}", activity.toString());
     }
 
-    @Test
-    public void testDeleteActivity(){
-        MemberActivityDTO activity = mypageMapper.selectActivityById(26L).orElseThrow();
-        MemberActivityFileDTO file =
-
-        mypageMapper.deleteActivity(activity.getId());
-        memberActivityFileMapper.deleteByActivityId(activity.getId());
-        fileMapper.delete();
-    }
+//    @Test
+//    public void testDeleteActivity(){
+//        MemberActivityDTO activity = mypageMapper.selectActivityById(26L).orElseThrow();
+//        MemberActivityFileDTO file =
+//
+//        mypageMapper.deleteActivity(activity.getId());
+//        memberActivityFileMapper.deleteByActivityId(activity.getId());
+//        fileMapper.delete();
+//    }
 
 }

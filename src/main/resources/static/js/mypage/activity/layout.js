@@ -6,7 +6,6 @@ const activityLayout = (() => {
        let text = ``;
        const activities = data;
 
-       console.log("데이터 개수",activities.length);
 
        if(memberId!==null && activities.length !== 0) {
            activities.forEach(activity => {

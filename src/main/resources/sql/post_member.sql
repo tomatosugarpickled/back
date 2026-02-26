@@ -6,6 +6,6 @@ create table tbl_post_member
     post_id bigint unsigned not null ,
     constraint fk_post_member_member foreign key (member_id)
         references tbl_member (id),
-    constraint fk_post_member_post foreign key (id)
+    constraint fk_post_member_post foreign key (post_id)
         references tbl_post (id)
 );

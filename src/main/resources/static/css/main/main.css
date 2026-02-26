@@ -3135,6 +3135,15 @@ a {
     margin-right: 2px;
 }
 
+.feed-user-post-time-now {
+    color: #94a3b8;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: -0.24px;
+    font-family: var(--texts--fonts--body);
+    line-height: 18px;
+}
+
 .feed-content-container {
     display: flex;
     flex-direction: column;

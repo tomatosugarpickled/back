@@ -54,19 +54,18 @@
                                             <span class="user-certification-word">인증</span>
                                         </div>
                                     </div>
-                                    <p class="user-nickname-job-word">CEO at Tesla & SpaceX · 10년 이상</p>
                                 </div>
                             </div>
                             <div class="user-status-wrap">
                                 <!-- <a href=""> -->
                                 <div class="user-status-post-wrap">
                                     <p class="user-status-word">게시물</p>
-                                    <p class="user-status-count">0</p>
+                                    <p class="user-status-count post-count">0</p>
                                 </div>
                                 <!-- </a>x -->
                                 <div class="user-status-followr-wrap">
                                     <p class="user-status-word">팔로워</p>
-                                    <p class="user-status-count">0</p>
+                                    <p class="user-status-count follower-count">0</p>
                                 </div>
                                 <div class="user-status-following-wrap">
                                     <p class="user-status-word">팔로잉</p>
@@ -111,7 +110,7 @@
                     <div class="user-content-wrap">
                         <!-- Feed Section for "내 게시물" Tab -->
                         <div class="feed-container" data-tab="posts" style="display: block;">
-                            <div class="feed-wrapper">
+                            <div class="feed-wrapper posts">
                                 <!-- Post 2: Tesla AI -->
                                 <div class="feed-card">
                                     <div class="feed-section">
@@ -119,7 +118,7 @@
                                             <div class="fead-profile">
                                                 <div class="feed-profile-container">
                                                     <div class="feed-profile-wrapper">
-                                                        <img src="https://i.pravatar.cc/150?img=12" alt="Elon Musk">
+                                                        <img src="/image/profiles/basicprofile.jpg" alt="profile-img" class="pro-img">
                                                     </div>
                                                 </div>
                                             </div>
@@ -128,12 +127,11 @@
                                                     <div class="feed-header-info-name-section">
                                                         <div class="feed-header-info-name-wrapper">
                                                             <div class="feed-header-info-name">
-                                                                <p class="name-tag">Elon Musk</p>
+                                                                <p class="name-tag" th:text="${session.member.memberName}"></p>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="feed-header-info-date-section">
-                                                        <p class="feed-user-stack">CEO at Tesla & SpaceX</p>
                                                         <p class="feed-user-post-time">5시간전</p>
                                                     </div>
                                                 </div>
@@ -241,7 +239,7 @@
                         </div>
                         <!-- Follower Section for "팔로워" Tab -->
                         <div class="feed-container" id="follower-list-section" data-tab="followers" style="display: none;">
-                            <div class="feed-wrapper">
+                            <div class="feed-wrapper follower">
                                 <div class="feed-card">
                                     <div class="feed-section">
                                         <div class="follower-list-header">
@@ -1063,6 +1061,18 @@
 <script th:inline="javascript">
     const memberCareer = [[${memberCareer}]];
 </script>
+<script th:inline="javascript">
+    <!--/*
+    const posts = [[${postsWithPaging.posts}]];
+    const criteria = [[${postsWithPaging.criteria}]];
+    */-->
+</script>
+<script th:inline="javascript">
+    <!--/*
+    const follows = [[${followsWithPaging.follows}]];
+    const criteria = [[${followsWithPaging.criteria}]];
+    */-->
+</script>
     <script src="/js/mypage/logo-carousel.js" defer></script>
     <script src="/js/mypage/tab-switch.js" defer></script>
     <script src="/js/mypage/mypage.js" defer></script>
@@ -1072,6 +1082,12 @@
 <script src="/js/mypage/career/layout.js"></script>
 <script src="/js/mypage/education/service.js"></script>
 <script src="/js/mypage/education/layout.js"></script>
+<script src="/js/follow/service.js"></script>
+<script src="/js/follow/layout.js"></script>
+<script src="/js/follow/event.js"></script>
+<script src="/js/post-list/service.js"></script>
+<script src="/js/post-list/layout.js"></script>
+<script src="/js/post-list/event.js"></script>
 <script src="/js/mypage/event.js"></script>
 <script src="/js/main/main.js"></script>
 </body>
