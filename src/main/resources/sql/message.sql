@@ -42,3 +42,4 @@ from tbl_member m
               on msg1.id = msg2.id
      ) msg
      on m.id = msg.member_id;
+

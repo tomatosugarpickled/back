@@ -6,6 +6,8 @@ import com.app.candm.mapper.MessageRoomMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 @RequiredArgsConstructor
 public class MessageRoomDAO {
@@ -19,5 +21,10 @@ public class MessageRoomDAO {
     // 방 조회
     public Long findByCreatedMemberIdAndInvitedMemberId(MessageDTO messageDTO){
         return messageRoomMapper.selectByCreatedMemberIdAndInvitedMemberId(messageDTO);
+    }
+
+    //방 목록
+    public List<MessageRoomDTO> selectAllListByMemberId(Long memberId) {
+        return messageRoomMapper.selectAllListByMemberId(memberId);
     }
 }

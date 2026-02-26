@@ -13,14 +13,14 @@ public class MessageRoomTests {
     @Autowired
     private MessageRoomMapper messageRoomMapper;
 
-//    @Test
-//    public void testInsertMessageRoom() {
-//        MessageRoomDTO messageRoomDTO = new MessageRoomDTO();
-//        messageRoomDTO.setCreatedMemberId(1L);
-//        messageRoomDTO.setInvitedMemberId(2L);
-//
-//        messageRoomMapper.insert(messageRoomDTO);
-//    }
+    @Test
+    public void testInsertMessageRoom() {
+        MessageDTO messageDTO = new MessageDTO();
+        messageDTO.setSenderId(1L);
+        messageDTO.setReceiverId(2L);
+
+        messageRoomMapper.insert(messageDTO);
+    }
 
     @Test
     public void testSelectByCreatedMemberIdAndInvitedMemberId() {
@@ -29,5 +29,10 @@ public class MessageRoomTests {
         messageDTO.setReceiverId(2L);
         Long id = messageRoomMapper.selectByCreatedMemberIdAndInvitedMemberId(messageDTO);
         log.info("id:{}", id);
+    }
+
+    @Test
+    public void testSelectAllListByMemberId() {
+        log.info("{}", messageRoomMapper.selectAllListByMemberId(2L));
     }
 }
