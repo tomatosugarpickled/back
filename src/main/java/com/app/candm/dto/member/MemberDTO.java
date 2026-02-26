@@ -7,6 +7,8 @@ import com.app.candm.domain.OauthVO;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
+import java.util.Optional;
+
 @Getter @Setter @ToString
 @EqualsAndHashCode(of = "id")
 @NoArgsConstructor
@@ -23,6 +25,8 @@ public class MemberDTO {
     private Provider provider;
     private boolean remember;
     private String profileImageUrl;
+
+    private Optional<MemberFileDTO> memberFile;
 
     public MemberVO toMemberVO(){
         return MemberVO.builder()

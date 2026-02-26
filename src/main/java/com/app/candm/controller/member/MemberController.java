@@ -62,4 +62,14 @@ public class MemberController {
         memberService.kakaoJoin(memberDTO);
         return new RedirectView("/mypage");
     }
+
+//    로그아웃
+    @GetMapping("logout")
+    public RedirectView logout(){
+        log.info("{들어옴}");
+        log.info(session.toString());
+        session.invalidate();
+        return new RedirectView("/member/login");
+    }
+
 }

@@ -62,6 +62,7 @@ if(memberIdInput){
 myPageService.getCareerList(memberId, myPageLayout.showList);
 myPageEducationService.getEducationList(memberId, educationLayout.showList);
 myPageActivityService.getActivityList(memberId, activityLayout.showList);
+myProfileService.profileSelect(memberId,profileLayout.showProfile);
 
 registerBtn.addEventListener("click", async (e) => {
     await myPageService.careerRegister(

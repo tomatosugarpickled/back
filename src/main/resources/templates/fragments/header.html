@@ -385,7 +385,7 @@
                             <div class="login-icon2">
                                 <div class="park">
                                     <div class="park-in">
-                                        <img th:src="@{/image/profiles/basicprofile.jpg}" class="park-img">
+                                        <img class="park-img">
                                     </div>
                                 </div>
                                 <div class="modal-park" style="display: none;">
@@ -424,7 +424,7 @@
                                                                 </div>
                                                             </div>
                                                             <div class="logout-text">
-                                                                <p class="logo-text-in">로그아웃</p>
+                                                                <a class="logo-text-in" href="/member/logout">로그아웃</a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -452,3 +452,6 @@
         </div>
     </div>
 </div>
+<script th:inline="javascript">
+    const memberId = [[${member.id}]];
+</script>

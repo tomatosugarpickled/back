@@ -15,7 +15,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>C&M 코딩과 나의 이야기</title>
+    <title>C&M</title>
     <link rel="stylesheet" href="../../static/css/domain/domain.css">
 </head>
 <body>
@@ -806,7 +806,9 @@
                                     </div>
                                 </div>
                                 <div class="logout-text">
-                                    <p class="logo-text-in">로그아웃</p>
+                                    <th:block>
+                                        <a class="logo-text-in" th:unless="${session.member.provider.value == 'kakao'}" href="/member/logout">로그아웃</a>
+                                    </th:block>
                                 </div>
                             </div>
                         </div>
