@@ -18,3 +18,28 @@ create table tbl_message
 
 select *
 from tbl_message;
+
+
+
+select m.member_name, msg.message_room_id, msg.message_content, msg.notification_datetime
+from tbl_member m
+         join
+     (
+         select
+             msg2.message_room_id, msg1.message_content, msg1.notification_datetime,
+             case
+                 when msg1.receiver_id = 2 then msg1.sender_id
+                 else msg1.receiver_id
+                 end as member_id
+         from tbl_message msg1
+                  join
+              (
+                  select message_room_id, max(id) id
+                  from tbl_message
+                  where receiver_id = 2  or sender_id = 1
+                  group by message_room_id
+              ) msg2
+              on msg1.id = msg2.id
+     ) msg
+     on m.id = msg.member_id;
+

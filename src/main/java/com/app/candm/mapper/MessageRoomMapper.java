@@ -1,13 +1,10 @@
 package com.app.candm.mapper;
 
-import com.app.candm.domain.MessageRoomVO;
 import com.app.candm.dto.message.MessageDTO;
 import com.app.candm.dto.message.MessageRoomDTO;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
-import java.util.Optional;
 
 @Mapper
 public interface MessageRoomMapper {
@@ -20,5 +17,5 @@ public interface MessageRoomMapper {
     );
 
     // 내 채팅방 목록
-
+    public List<MessageRoomDTO> selectAllListByMemberId(Long memberId);
 }
