@@ -20,5 +20,5 @@ public interface MessageRoomMapper {
     );
 
     // 내 채팅방 목록
-
+    public List<MessageRoomDTO> selectAllListByMemberId(Long id);
 }
