@@ -15,6 +15,7 @@ public class PostDTO {
     private int postViewCount;
     private Status postStatus;
     private Long memberId;
+    private String memberName;
     private String createdDatetime;
     private String updatedDatetime;
 

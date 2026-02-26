@@ -15,7 +15,7 @@ postWrapper.addEventListener('scroll', async () => {
     if(!checkScroll || !criteria.hasMore) {
         return;
     }
-    console.log("움직임!")
+
     // 현재 스크롤 위치
     const scrollTop = postWrapper.scrollTop;     // 현재 스크롤 위치
     const clientHeight = postWrapper.clientHeight; // 눈에 보이는 높이

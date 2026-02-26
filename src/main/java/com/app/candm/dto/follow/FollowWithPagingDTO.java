@@ -1,7 +1,7 @@
-package com.app.candm.dto.post;
+package com.app.candm.dto.follow;
 
 import com.app.candm.common.pagination.Criteria;
-import com.app.candm.domain.PostVO;
+import com.app.candm.dto.post.PostDTO;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,8 +13,8 @@ import java.util.List;
 @Setter
 @ToString
 @NoArgsConstructor
-public class PostWithPagingDTO {
-    private List<PostDTO> posts;
+public class FollowWithPagingDTO {
+    private List<FollowDTO> follows;
     private Criteria criteria;
-    private int total;
+    private int followerTotal;
 }

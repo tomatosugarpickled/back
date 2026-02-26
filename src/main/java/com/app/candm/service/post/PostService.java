@@ -25,16 +25,18 @@ public class PostService {
 
         List<PostDTO> posts = postDAO.findAll(id, criteria);
 
-        log.info("{}",posts);
+
         criteria.setHasMore(posts.size() > criteria.getRowCount());
         postWithPagingDTO.setCriteria(criteria);
 
         posts.forEach(postDTO ->
                 postDTO.setCreatedDatetime(DateUtils.toRelativeTime(postDTO.getCreatedDatetime())));
 
+
+        postWithPagingDTO.setTotal(postDAO.findTotal(id));
         postWithPagingDTO.setPosts(posts);
 
-        log.info("{}",postWithPagingDTO);
+
         return postWithPagingDTO;
     }
 }

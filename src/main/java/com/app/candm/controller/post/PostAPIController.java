@@ -20,8 +20,7 @@ public class PostAPIController {
 
     @GetMapping("/post/list/{id}/{page}")
     public PostWithPagingDTO list(@PathVariable("id") Long id, @PathVariable("page") int page){
-        log.info("{}",id);
-        log.info("{}",page);
+
         return postService.list(id, page);
     }
 }

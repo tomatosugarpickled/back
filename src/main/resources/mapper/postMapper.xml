@@ -4,8 +4,8 @@
 
     <select id="selectAll">
         select distinct
-            member_name,
-            p.id, p.post_title, p.post_content, p.post_view_count, p.member_id, p.created_date, p.updated_date, p.post_status
+            m.member_name,
+            p.id, p.post_title, p.post_content, p.post_view_count, p.member_id, p.created_datetime, p.updated_datetime, p.post_status
         from tbl_member m join tbl_post p
         on m.id = p.member_id
         where m.id = #{id}
@@ -14,8 +14,8 @@
 
     <select id="selectById">
         select distinct
-            member_name,
-            p.id, p.post_title, p.post_content, p.post_view_count, p.member_id, p.created_date, p.updated_date, p.post_status
+            m.member_name,
+            p.id, p.post_title, p.post_content, p.post_view_count, p.member_id, p.created_datetime, p.updated_datetime, p.post_status
         from tbl_member m join tbl_post p
         on m.id = p.member_id
         where p.id = #{id}

@@ -1,16 +1,20 @@
 const postListLayout = (() => {
-    console.log("postLayout실행");
     const showList = (data) => {
-        const postContainer = document.querySelector('.feed-wrapper');
+        const postContainer = document.querySelector('.posts');
+        const postCount = document.querySelector(".post-count");
 
         const posts = data.posts;
         const criteria = data.criteria;
 
-        console.log("posts",posts.length);
-        console.log("criteria",criteria);
-        console.log(postContainer);
 
         let text = ``;
+        let countText = ``;
+
+        countText = `
+            <p class="user-status-count post-count">${data.total}</p>
+        `
+        postCount.innerHTML = countText;
+
 
         posts.forEach((post) => {
             text += `
@@ -34,7 +38,7 @@ const postListLayout = (() => {
                                         </div>
                                     </div>
                                     <div class="feed-header-info-date-section">
-                                        <p class="feed-user-post-time">${post.createdDatetime}</p>
+                                        <p class="feed-user-post-time-now">${post.createdDatetime}</p>
                                     </div>
                                 </div>
                             </div>

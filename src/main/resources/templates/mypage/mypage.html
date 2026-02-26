@@ -60,12 +60,12 @@
                                 <!-- <a href=""> -->
                                 <div class="user-status-post-wrap">
                                     <p class="user-status-word">게시물</p>
-                                    <p class="user-status-count">0</p>
+                                    <p class="user-status-count post-count">0</p>
                                 </div>
                                 <!-- </a>x -->
                                 <div class="user-status-followr-wrap">
                                     <p class="user-status-word">팔로워</p>
-                                    <p class="user-status-count">0</p>
+                                    <p class="user-status-count follower-count">0</p>
                                 </div>
                                 <div class="user-status-following-wrap">
                                     <p class="user-status-word">팔로잉</p>
@@ -110,7 +110,7 @@
                     <div class="user-content-wrap">
                         <!-- Feed Section for "내 게시물" Tab -->
                         <div class="feed-container" data-tab="posts" style="display: block;">
-                            <div class="feed-wrapper">
+                            <div class="feed-wrapper posts">
                                 <!-- Post 2: Tesla AI -->
                                 <div class="feed-card">
                                     <div class="feed-section">
@@ -239,7 +239,7 @@
                         </div>
                         <!-- Follower Section for "팔로워" Tab -->
                         <div class="feed-container" id="follower-list-section" data-tab="followers" style="display: none;">
-                            <div class="feed-wrapper">
+                            <div class="feed-wrapper follower">
                                 <div class="feed-card">
                                     <div class="feed-section">
                                         <div class="follower-list-header">
@@ -1067,6 +1067,12 @@
     const criteria = [[${postsWithPaging.criteria}]];
     */-->
 </script>
+<script th:inline="javascript">
+    <!--/*
+    const follows = [[${followsWithPaging.follows}]];
+    const criteria = [[${followsWithPaging.criteria}]];
+    */-->
+</script>
     <script src="/js/mypage/logo-carousel.js" defer></script>
     <script src="/js/mypage/tab-switch.js" defer></script>
     <script src="/js/mypage/mypage.js" defer></script>
@@ -1076,9 +1082,12 @@
 <script src="/js/mypage/career/layout.js"></script>
 <script src="/js/mypage/education/service.js"></script>
 <script src="/js/mypage/education/layout.js"></script>
-<script src="/js/mypage/post-list/service.js"></script>
-<script src="/js/mypage/post-list/layout.js"></script>
-<script src="/js/mypage/post-list/event.js"></script>
+<script src="/js/follow/service.js"></script>
+<script src="/js/follow/layout.js"></script>
+<script src="/js/follow/event.js"></script>
+<script src="/js/post-list/service.js"></script>
+<script src="/js/post-list/layout.js"></script>
+<script src="/js/post-list/event.js"></script>
 <script src="/js/mypage/event.js"></script>
 <script src="/js/main/main.js"></script>
 </body>

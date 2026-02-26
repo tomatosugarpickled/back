@@ -2,16 +2,13 @@ package com.app.candm.domain;
 
 import com.app.candm.audit.Period;
 import com.app.candm.common.enumeration.Status;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 @Getter
 @ToString(callSuper = true)
 @EqualsAndHashCode(of="id")
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @SuperBuilder
 public class PostVO extends Period {
     private Long id;
