@@ -1,8 +1,9 @@
 package com.app.candm.controller.team;
 
 import com.app.candm.dto.TeamDTO;
-import com.app.candm.dto.funding.FundingDTO;
+import com.app.candm.dto.member.MemberDTO;
 import com.app.candm.service.team.TeamRegistrationService;
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -42,12 +43,14 @@ public class TeamController {
 
     // 3. 팀 목록 페이지
     @GetMapping("/team-list")
-    public String showTeamList(@RequestParam("memberId") Long memberId, Model model) {
-
-         List<TeamDTO> teams = teamRegistrationService.getListByMember(memberId);
-
-         model.addAttribute("teams", teams);
-         model.addAttribute("memberId", memberId);
+    public String showTeamList(@RequestParam(value = "memberId", required = false) Long memberId, HttpSession session, Model model) {
+        if (memberId == null) {
+            MemberDTO member = (MemberDTO) session.getAttribute("member");
+            if (member != null) memberId = member.getId();
+        }
+        List<TeamDTO> teams = memberId != null ? teamRegistrationService.getListByMember(memberId) : List.of();
+        model.addAttribute("teams", teams);
+        model.addAttribute("memberId", memberId);
         return "/team/team-list/team-list";
     }
 

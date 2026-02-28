@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>C&M insight</title>
-    <link rel="stylesheet" href="../../static/css/common/global-colors.css">
-    <link rel="stylesheet" href="../../static/css/insight/insight.css">
+    <link rel="stylesheet" href="/css/main/main.css">
+    <link rel="stylesheet" href="/css/common/global-colors.css">
+    <link rel="stylesheet" href="/css/insight/insight.css">
 </head>
 <body>
-    <main class="main-border">
-        <div class="div-header"></div>
-        <div class="div-container">
+<div th:replace="fragments/header :: layout(~{::content})">
+    <div th:fragment="content">
+        <div class="div-container" style="padding:0; overflow:visible;">
             <div class="div-content-wrap">
-                <!-- ========== 배너 섹션 ========== 
+                <!-- ========== 배너 섹션 ==========
                      프로젝트 공개 및 펀딩 시작 안내 배너
                 -->
                 <div class="banner-container">
@@ -26,15 +27,12 @@
                         </div>
                     </div>
                     <div class="banner-content-image">
-                        <img class="banner-image" alt="" src="../../static/image/insight/banner-image.png">
+                        <img class="banner-image" alt="" src="/image/insight/banner-image.png">
                     </div>
                 </div>
                    <!-- ========== 이벤트 컨테이너 ========== -->
                 <div class="event-container">
-                      <!-- ========== 비즈니스 인사이트 섹션 ========== 
-                         카테고리별 인사이트 카드 (가로 스크롤 가능)
-                         - 성장 전략, 트렌드 뉴스, 법률 가이드, 팀 빌딩, 네트워킹, 페어
-                    -->
+                      <!-- ========== 비즈니스 인사이트 섹션 ========== -->
                     <div class="search-wrap">
                         <div class="search-text-area">
                             <div class="search-text">
@@ -42,7 +40,6 @@
                                     <p class="search-content">비즈니스 주요 인사이트</p>
                                 </div>
                             </div>
-                               <!-- 좌우 네비게이션 화살표 -->
                             <div class="search-arrows">
                                 <div class="search-left-arrow">
                                     <button class="left-arrow-button">
@@ -60,62 +57,55 @@
                                 </div>
                             </div>
                         </div>
-                            <!-- 인사이트 카드 그리드 -->
                         <div class="search-image-area">
-                            <!-- 성장 전략 카드 -->
                             <div class="search-image-wrap">
                                 <div class="search-image">
-                                    <img src="../../static/image/insight/grow-img.jpg" alt="" width="123" height="123" style="aspect-ratio: 1 / 1; border-radius: 12px; height: auto; object-fit: cover; width: 100%;">
+                                    <img src="/image/insight/grow-img.jpg" alt="" width="123" height="123" style="aspect-ratio: 1 / 1; border-radius: 12px; height: auto; object-fit: cover; width: 100%;">
                                 </div>
                                 <div class="search-image-text">
                                     <p class="primary-text-inner">성장 전략</p>
                                     <p class="secondary-text-inner">한정 기간 행사</p>
                                 </div>
                             </div>
-                            <!-- 트렌드 뉴스 카드 -->
                             <div class="search-image-wrap">
                                 <div class="search-image">
-                                    <img src="../../static/image/insight/trend-news.jpg" alt="" width="123" height="123" style="aspect-ratio: 1 / 1; border-radius: 12px; height: auto; object-fit: cover; width: 100%;">
+                                    <img src="/image/insight/trend-news.jpg" alt="" width="123" height="123" style="aspect-ratio: 1 / 1; border-radius: 12px; height: auto; object-fit: cover; width: 100%;">
                                 </div>
                                 <div class="search-image-text">
                                     <p class="primary-text-inner">트렌드 뉴스</p>
                                     <p class="secondary-text-inner">한정 기간 행사</p>
                                 </div>
                             </div>
-                            <!-- 법률 가이드 카드 -->
                             <div class="search-image-wrap">
                                 <div class="search-image">
-                                    <img src="../../static/image/insight/legal-advice.png" alt="" width="123" height="123" style="aspect-ratio: 1 / 1; border-radius: 12px; height: auto; object-fit: cover; width: 100%;">
+                                    <img src="/image/insight/legal-advice.png" alt="" width="123" height="123" style="aspect-ratio: 1 / 1; border-radius: 12px; height: auto; object-fit: cover; width: 100%;">
                                 </div>
                                 <div class="search-image-text">
                                     <p class="primary-text-inner">법률 가이드</p>
                                     <p class="secondary-text-inner">한정 기간 행사</p>
                                 </div>
                             </div>
-                             <!-- 팀 빌딩 카드 -->
                             <div class="search-image-wrap">
                                 <div class="search-image">
-                                    <img src="../../static/image/insight/team-building.png" alt="" width="123" height="123" style="aspect-ratio: 1 / 1; border-radius: 12px; height: auto; object-fit: cover; width: 100%; ">
+                                    <img src="/image/insight/team-building.png" alt="" width="123" height="123" style="aspect-ratio: 1 / 1; border-radius: 12px; height: auto; object-fit: cover; width: 100%; ">
                                 </div>
                                 <div class="search-image-text">
                                     <p class="primary-text-inner">팀 빌딩</p>
                                     <p class="secondary-text-inner">한정 기간 행사</p>
                                 </div>
                             </div>
-                            <!-- 네트워킹 카드 -->
                             <div class="search-image-wrap">
                                 <div class="search-image">
-                                    <img src="../../static/image/insight/networking.png" alt="" width="123" height="123" style="aspect-ratio: 1 / 1; border-radius: 12px; height: auto; object-fit: cover; width: 100%; ">
+                                    <img src="/image/insight/networking.png" alt="" width="123" height="123" style="aspect-ratio: 1 / 1; border-radius: 12px; height: auto; object-fit: cover; width: 100%; ">
                                 </div>
                                 <div class="search-image-text">
                                     <p class="primary-text-inner">네트워킹</p>
                                     <p class="secondary-text-inner">한정 기간 행사</p>
                                 </div>
                             </div>
-                            <!-- 페어 카드 -->
                             <div class="search-image-wrap">
                                 <div class="search-image">
-                                    <img src="../../static/image/insight/fair.png" alt="" width="123" height="123" style="aspect-ratio: 1 / 1; border-radius: 12px; height: auto; object-fit: cover; width: 100%; ">
+                                    <img src="/image/insight/fair.png" alt="" width="123" height="123" style="aspect-ratio: 1 / 1; border-radius: 12px; height: auto; object-fit: cover; width: 100%; ">
                                 </div>
                                 <div class="search-image-text">
                                     <p class="primary-text-inner">페어</p>
@@ -124,10 +114,7 @@
                             </div>
                         </div>
                     </div>
-                        <!-- ========== 공지사항 섹션 ========== 
-                         주요 공지사항 및 가이드 카드
-                         - 창업 길잡이, 운영 안내, 중요 안내 등
-                    -->
+                    <!-- ========== 공지사항 섹션 ========== -->
                     <div class="event-wrap">
                         <div class="search-text-area">
                             <div class="search-text">
@@ -135,7 +122,6 @@
                                     <p class="search-content">공지사항</p>
                                 </div>
                             </div>
-                             <!-- 좌우 네비게이션 화살표 -->
                             <div class="search-arrows">
                                 <div class="search-left-arrow">
                                     <button class="left-arrow-button">
@@ -153,21 +139,19 @@
                                 </div>
                             </div>
                     </div>
-                    <!-- 공지사항 카드 그리드 -->
                     <div class="event-image-area">
-                          <!-- 창업 길잡이 카드 -->
                         <div class="event-image-wrap">
                             <div class="event-image">
-                                <img src="../../static/image/insight/project-exposure.png" alt="" class="event-image-inner">
+                                <img src="/image/insight/project-exposure.png" alt="" class="event-image-inner">
                                 <div class="d-day-count">
                                     <span class="d-day-count-inner">D-1</span>
-                                </div>     
+                                </div>
                             </div>
                             <div class="event-image-text">
                                 <div class="image-text-header">
                                     <div class="header-icon">
                                         <div class="header-icon-inner" style="border-radius: 2.4px; margin-left: 0px; mask-size: 13.7504px 16px; z-index: 1;">
-                                        <img src="../../static/image/insight/cube-image.png" alt="" style="color: transparent; border-radius: 2.4px; height: 16px; width: 16px; object-fit: cover;">
+                                        <img src="/image/insight/cube-image.png" alt="" style="color: transparent; border-radius: 2.4px; height: 16px; width: 16px; object-fit: cover;">
                                         </div>
                                     </div>
                                     <p class="header-text">창업 길잡이</p>
@@ -183,17 +167,16 @@
                         </div>
                         <div class="event-image-wrap">
                             <div class="event-image">
-                                <img src="../../static/image/insight/info-write.jpg" alt="" class="event-image-inner">
+                                <img src="/image/insight/info-write.jpg" alt="" class="event-image-inner">
                                 <div class="d-day-count">
                                     <span class="d-day-count-inner">D-1</span>
-                                </div>     
+                                </div>
                             </div>
-                             <!-- 운영 안내 카드 -->
                             <div class="event-image-text">
                                 <div class="image-text-header">
                                     <div class="header-icon">
                                         <div class="header-icon-inner" style="border-radius: 2.4px; margin-left: 0px; mask-size: 13.7504px 16px; z-index: 1;">
-                                        <img src="../../static/image/insight/cube-image.png" alt="" style="color: transparent; border-radius: 2.4px; height: 16px; width: 16px; object-fit: cover;">
+                                        <img src="/image/insight/cube-image.png" alt="" style="color: transparent; border-radius: 2.4px; height: 16px; width: 16px; object-fit: cover;">
                                         </div>
                                     </div>
                                     <p class="header-text">운영 안내</p>
@@ -207,19 +190,18 @@
                                 </div>
                             </div>
                         </div>
-                         <!-- 중요 안내 카드 -->
                         <div class="event-image-wrap">
                             <div class="event-image">
-                                <img src="../../static/image/insight/checklist.jpg" alt="" class="event-image-inner">
+                                <img src="/image/insight/checklist.jpg" alt="" class="event-image-inner">
                                 <div class="d-day-count">
                                     <span class="d-day-count-inner">D-1</span>
-                                </div>     
+                                </div>
                             </div>
                             <div class="event-image-text">
                                 <div class="image-text-header">
                                     <div class="header-icon">
                                         <div class="header-icon-inner" style="border-radius: 2.4px; margin-left: 0px; mask-size: 13.7504px 16px; z-index: 1;">
-                                        <img src="../../static/image/insight/cube-image.png" alt="" style="color: transparent; border-radius: 2.4px; height: 16px; width: 16px; object-fit: cover;">
+                                        <img src="/image/insight/cube-image.png" alt="" style="color: transparent; border-radius: 2.4px; height: 16px; width: 16px; object-fit: cover;">
                                         </div>
                                     </div>
                                     <p class="header-text">중요 안내</p>
@@ -235,11 +217,7 @@
                         </div>
                     </div>
                     </div>
-                      <!-- ========== 주제별 보기 섹션 ========== 
-                         비즈니스 주제별 분류 카드
-                         - 기술, 컨텐츠, 교육, AI 및 자동화
-                         - SVG 아이콘 포함
-                    -->
+                    <!-- ========== 주제별 보기 섹션 ========== -->
                     <div class="theme-area">
                         <div class="search-text">
                             <div class="search-text-inner">
@@ -247,7 +225,6 @@
                             </div>
                         </div>
                         <div class="theme-wrap">
-                            <!-- 기술 (블록체인/암호화폐) -->
                             <div class="theme-inner">
                                 <div class="theme-inner-icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="theme-icon-svg" fill="currentColor" height="21.6" width="21.6" viewBox="0 0 16 16">
@@ -259,7 +236,6 @@
                                     <p class="theme-inner-text-secondary">블록체인 · 암호화폐</p>
                                 </div>
                             </div>
-                              <!-- 컨텐츠 (미디어/크리에이터) -->
                             <div class="theme-inner">
                                 <div class="theme-inner-icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="theme-icon-svg" fill="currentColor" height="21.6" width="21.6" viewBox="0 0 16 16">
@@ -271,7 +247,6 @@
                                     <p class="theme-inner-text-secondary">미디어 · 크리에이터 · IP 비즈니스</p>
                                 </div>
                             </div>
-                            <!-- 교육 (에듀테크) -->
                             <div class="theme-inner">
                                 <div class="theme-inner-icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="theme-icon-svg" fill="currentColor" height="21.6" width="21.6" viewBox="0 0 16 16">
@@ -283,7 +258,6 @@
                                     <p class="theme-inner-text-secondary">에듀테크 · 온라인 러닝</p>
                                 </div>
                             </div>
-                              <!-- AI 및 자동화 -->
                             <div class="theme-inner">
                                 <div class="theme-inner-icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="theme-icon-svg" fill="currentColor" height="21.6" width="21.6" viewBox="0 0 16 16">
@@ -302,14 +276,7 @@
             <!-- ========== 하단 컨텐츠 영역 ========== -->
             <div class="div-content-wrap-bottom">
                 <div class="search-event-content">
-                    <!-- ========== 검색 및 필터 바 ========== 
-                         기능:
-                         - 키워드 검색
-                         - 유형별 필터 (모든 유형/성장 전략/트렌드 뉴스 등)
-                         - 주제별 필터 (모든 주제/기술/컨텐츠/교육 등)
-                    -->
                     <div class="search-bar-wrap">
-                        <!-- 검색 입력 필드 -->
                         <div class="search-bar">
                             <div class="search-bar-icon-wrap">
                                 <div draggable="false" style="border-radius:0px;cursor:inherit;height:18px;padding:0px;margin-right: 7px;" class="search-bar-icon">
@@ -327,8 +294,6 @@
                                 </button>
                             </div>
                         </div>
-                        <!-- 필터 드롭다운 -->
-                        <!-- 유형 필터 -->
                         <div class="select-category-wrap selectEvent">
                             <p class="select-category">모든 유형</p>
                             <div class="select-category-box">
@@ -337,7 +302,6 @@
                                 </svg>
                             </div>
                         </div>
-                        <!-- 주제 필터 -->
                         <div class="select-theme-wrap selectEvent">
                             <p class="select-theme">모든 주제</p>
                             <div class="select-theme-box">
@@ -346,7 +310,6 @@
                                 </svg>
                             </div>
                         </div>
-                        <!-- 위치 필터 -->
                         <div class="select-location-wrap selectEvent">
                             <p class="select-location">모든 위치</p>
                             <div class="select-location-box">
@@ -356,21 +319,12 @@
                             </div>
                         </div>
                     </div>
-                    <!-- ========== 검색 결과 표시 영역 ========== -->
                     <div class="find-box-container">
-                        <!-- 검색 결과 없음 메시지 -->
                         <div class="unfinded-wrap">
                             <div class="unfinded-inner">
                                 <p class="unfinded-inner-text">조회된 이벤트가 없습니다.</p>
                             </div>
                         </div>
-                          <!-- ========== 이벤트 카드 ========== 
-                             검색 결과로 표시되는 이벤트 카드
-                             - 썸네일 이미지
-                             - D-day 표시
-                             - 이벤트 정보 (제목, 설명)
-                             - 인터랙션 버튼 (조회수, 공유)
-                        -->
                         <div class="find-box-wrap">
                             <div class="find-box-header">
                                 <div class="find-box-header-innner">
@@ -378,19 +332,17 @@
                                 </div>
                             </div>
                             <div class="find-box-body">
-                                  <!-- 이미지 영역 -->
                                 <div class="find-box-body-image">
-                                    <img src="../../static/image/insight/project-exposure.png" alt="" style="color: transparent;border-radius: 8px;height: 140px;object-fit: cover;width: 210px;">
+                                    <img src="/image/insight/project-exposure.png" alt="" style="color: transparent;border-radius: 8px;height: 140px;object-fit: cover;width: 210px;">
                                     <div class="find-box-body-image-inner">
                                         <span class="find-box-body-image-icon">D-1</span>
                                     </div>
                                 </div>
-                                <!-- 텍스트 정보 영역 -->
                                 <div class="find-box-body-wrap">
                                     <div class="find-body-content">
                                         <div class="content-profile">
                                             <div class="content-profile-img">
-                                                <img src="../../static/image/insight/project-exposure.png" alt="" style="color: transparent; border-radius: 2.4px; height: 16px; width: 16px; object-fit: cover;">
+                                                <img src="/image/insight/project-exposure.png" alt="" style="color: transparent; border-radius: 2.4px; height: 16px; width: 16px; object-fit: cover;">
                                             </div>
                                         </div>
                                         <p class="profile-primary-text">창업 길잡이</p>
@@ -415,7 +367,7 @@
                                         <button class="find-body-button">
                                              <div draggable="false" class="find-body-button-icon">
                                                 <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" height="24" width="24"  viewBox="0 0 21 21">
-                                                    <path clip-rule="evenodd" d="M13.31 4.254A.8.8 0 0 0 12.8 5v2.737c-1.678.149-3.84.773-5.695 2.234C4.902 11.706 3.2 14.568 3.2 19a.8.8 0 0 0 1.6 0c0-.153.172-.81 1.481-1.474 1.192-.603 3.222-1.142 6.519-1.217V19a.8.8 0 0 0 1.39.54l6.4-7a.8.8 0 0 0 0-1.08l-6.4-7a.8.8 0 0 0-.88-.206M5.047 16.385c.497-2.453 1.686-4.084 3.048-5.157C9.928 9.786 12.143 9.3 13.6 9.3a.8.8 0 0 0 .8-.8V7.06L18.916 12 14.4 16.94V15.5a.8.8 0 0 0-.8-.8c-3.907 0-6.447.591-8.041 1.399a7 7 0 0 0-.512.286" fill-rule="evenodd"></path>    
+                                                    <path clip-rule="evenodd" d="M13.31 4.254A.8.8 0 0 0 12.8 5v2.737c-1.678.149-3.84.773-5.695 2.234C4.902 11.706 3.2 14.568 3.2 19a.8.8 0 0 0 1.6 0c0-.153.172-.81 1.481-1.474 1.192-.603 3.222-1.142 6.519-1.217V19a.8.8 0 0 0 1.39.54l6.4-7a.8.8 0 0 0 0-1.08l-6.4-7a.8.8 0 0 0-.88-.206M5.047 16.385c.497-2.453 1.686-4.084 3.048-5.157C9.928 9.786 12.143 9.3 13.6 9.3a.8.8 0 0 0 .8-.8V7.06L18.916 12 14.4 16.94V15.5a.8.8 0 0 0-.8-.8c-3.907 0-6.447.591-8.041 1.399a7 7 0 0 0-.512.286" fill-rule="evenodd"></path>
                                                 </svg>
                                             </div>
                                         </button>
@@ -425,7 +377,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- ========== 푸터 영역 ========== -->
                 <div class="footer-content">
                         <button class="footer-button">
                             <p class="footer-button-inner">광고 문의</p>
@@ -441,21 +392,16 @@
                         <div class="shadow-menu-header">
                             <div class="shadow-menu-header-inner">모든 유형</div>
                         </div>
-                        <!-- ========== 드롭다운 메뉴 (유형 필터) ========== 
-                         '모든 유형' 클릭 시 표시되는 드롭다운 메뉴
-                         체크박스 형태로 다중 선택 가능
-                    -->
                         <div class="shadow-menu-body-container">
                             <div class="shadow-menu-body-wrap">
                                 <div class="shadow-menu-body-inner">
                                     <div class="shadow-menu-body-scroll">
-                                         <!-- 유형 옵션: 성장 전략 -->
                                         <div class="menu-scroll">
-                                            <div class="menu-scroll-inner01"> 
+                                            <div class="menu-scroll-inner01">
                                                 <div class="menu-scroll-inner02">
                                                     <div class="menu-scroll-inner03">
                                                         <p class="menu-scroll-primary">성장 전략</p>
-                                                        <p class="menu-scroll-secondary">비즈니스 성장 전략</p>         
+                                                        <p class="menu-scroll-secondary">비즈니스 성장 전략</p>
                                                     </div>
                                                     <div class="menu-scroll-check">
                                                         <div draggable="false" class="menu-scroll-check-inner">
@@ -464,16 +410,15 @@
                                                             </svg>
                                                         </div>
                                                     </div>
-                                                </div>   
+                                                </div>
                                             </div>
                                         </div>
-                                          <!-- 추가 유형 옵션들... -->
                                         <div class="menu-scroll">
-                                            <div class="menu-scroll-inner01"> 
+                                            <div class="menu-scroll-inner01">
                                                 <div class="menu-scroll-inner02">
                                                     <div class="menu-scroll-inner03">
                                                         <p class="menu-scroll-primary">트렌드 뉴스</p>
-                                                        <p class="menu-scroll-secondary">비즈니스 성장 전략</p>         
+                                                        <p class="menu-scroll-secondary">비즈니스 성장 전략</p>
                                                     </div>
                                                     <div class="menu-scroll-check">
                                                         <div draggable="false" class="menu-scroll-check-inner">
@@ -482,15 +427,15 @@
                                                             </svg>
                                                         </div>
                                                     </div>
-                                                </div>   
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="menu-scroll" >
-                                            <div class="menu-scroll-inner01"> 
+                                        <div class="menu-scroll">
+                                            <div class="menu-scroll-inner01">
                                                 <div class="menu-scroll-inner02">
                                                     <div class="menu-scroll-inner03">
                                                         <p class="menu-scroll-primary">법률 가이드</p>
-                                                        <p class="menu-scroll-secondary">비즈니스 성장 전략</p>         
+                                                        <p class="menu-scroll-secondary">비즈니스 성장 전략</p>
                                                     </div>
                                                     <div class="menu-scroll-check">
                                                         <div draggable="false" class="menu-scroll-check-inner">
@@ -499,15 +444,15 @@
                                                             </svg>
                                                         </div>
                                                     </div>
-                                                </div>   
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="menu-scroll">
-                                            <div class="menu-scroll-inner01"> 
+                                            <div class="menu-scroll-inner01">
                                                 <div class="menu-scroll-inner02">
                                                     <div class="menu-scroll-inner03">
                                                         <p class="menu-scroll-primary">팀 빌딩</p>
-                                                        <p class="menu-scroll-secondary">비즈니스 성장 전략</p>         
+                                                        <p class="menu-scroll-secondary">비즈니스 성장 전략</p>
                                                     </div>
                                                     <div class="menu-scroll-check">
                                                         <div draggable="false" class="menu-scroll-check-inner">
@@ -516,15 +461,15 @@
                                                             </svg>
                                                         </div>
                                                     </div>
-                                                </div>   
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="menu-scroll">
-                                            <div class="menu-scroll-inner01"> 
+                                            <div class="menu-scroll-inner01">
                                                 <div class="menu-scroll-inner02">
                                                     <div class="menu-scroll-inner03">
                                                         <p class="menu-scroll-primary">네트워킹</p>
-                                                        <p class="menu-scroll-secondary">비즈니스 성장 전략</p>         
+                                                        <p class="menu-scroll-secondary">비즈니스 성장 전략</p>
                                                     </div>
                                                     <div class="menu-scroll-check">
                                                         <div draggable="false" class="menu-scroll-check-inner">
@@ -533,15 +478,15 @@
                                                             </svg>
                                                         </div>
                                                     </div>
-                                                </div>   
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="menu-scroll">
-                                            <div class="menu-scroll-inner01"> 
+                                            <div class="menu-scroll-inner01">
                                                 <div class="menu-scroll-inner02">
                                                     <div class="menu-scroll-inner03">
                                                         <p class="menu-scroll-primary">페어</p>
-                                                        <p class="menu-scroll-secondary">비즈니스 성장 전략</p>         
+                                                        <p class="menu-scroll-secondary">비즈니스 성장 전략</p>
                                                     </div>
                                                     <div class="menu-scroll-check">
                                                         <div draggable="false" class="menu-scroll-check-inner">
@@ -550,7 +495,7 @@
                                                             </svg>
                                                         </div>
                                                     </div>
-                                                </div>   
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -559,7 +504,6 @@
                             </div>
                         </div>
                     </div>
-                      <!-- ========== 드롭다운 메뉴 (주제 필터) ========== -->
                      <div class="shadow-menu subject">
                         <div class="shadow-menu-header">
                             <div class="shadow-menu-header-inner">모든 주제</div>
@@ -569,11 +513,11 @@
                                 <div class="shadow-menu-body-inner">
                                     <div class="shadow-menu-body-scroll">
                                         <div class="menu-scroll">
-                                            <div class="menu-scroll-inner01"> 
+                                            <div class="menu-scroll-inner01">
                                                 <div class="menu-scroll-inner02">
                                                     <div class="menu-scroll-inner03">
                                                         <p class="menu-scroll-primary">기술</p>
-                                                        <p class="menu-scroll-secondary">블록체인 · 암호화폐</p>         
+                                                        <p class="menu-scroll-secondary">블록체인 · 암호화폐</p>
                                                     </div>
                                                     <div class="menu-scroll-check">
                                                         <div draggable="false" class="menu-scroll-check-inner">
@@ -582,15 +526,15 @@
                                                             </svg>
                                                         </div>
                                                     </div>
-                                                </div>   
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="menu-scroll">
-                                            <div class="menu-scroll-inner01"> 
+                                            <div class="menu-scroll-inner01">
                                                 <div class="menu-scroll-inner02">
                                                     <div class="menu-scroll-inner03">
                                                         <p class="menu-scroll-primary">컨텐츠</p>
-                                                        <p class="menu-scroll-secondary">미디어 · 크리에이터 · IP 비즈니스</p>         
+                                                        <p class="menu-scroll-secondary">미디어 · 크리에이터 · IP 비즈니스</p>
                                                     </div>
                                                     <div class="menu-scroll-check">
                                                         <div draggable="false" class="menu-scroll-check-inner">
@@ -599,32 +543,15 @@
                                                             </svg>
                                                         </div>
                                                     </div>
-                                                </div>   
-                                            </div>
-                                        </div>
-                                        <div class="menu-scroll" >
-                                            <div class="menu-scroll-inner01"> 
-                                                <div class="menu-scroll-inner02">
-                                                    <div class="menu-scroll-inner03">
-                                                        <p class="menu-scroll-primary">교육</p>
-                                                        <p class="menu-scroll-secondary">에듀테크 · 온라인 러닝</p>         
-                                                    </div>
-                                                    <div class="menu-scroll-check">
-                                                        <div draggable="false" class="menu-scroll-check-inner">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" class="checkclickoff" height="20px" width="20px" fill="currentColor" viewBox="0 0 16 16">
-                                                                <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0"/>
-                                                            </svg>
-                                                        </div>
-                                                    </div>
-                                                </div>   
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="menu-scroll">
-                                            <div class="menu-scroll-inner01"> 
+                                            <div class="menu-scroll-inner01">
                                                 <div class="menu-scroll-inner02">
                                                     <div class="menu-scroll-inner03">
-                                                        <p class="menu-scroll-primary">AI 및 자동화</p>
-                                                        <p class="menu-scroll-secondary">머신러닝 · 업무 자동화 · SaaS</p>         
+                                                        <p class="menu-scroll-primary">교육</p>
+                                                        <p class="menu-scroll-secondary">에듀테크 · 온라인 러닝</p>
                                                     </div>
                                                     <div class="menu-scroll-check">
                                                         <div draggable="false" class="menu-scroll-check-inner">
@@ -633,7 +560,24 @@
                                                             </svg>
                                                         </div>
                                                     </div>
-                                                </div>   
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="menu-scroll">
+                                            <div class="menu-scroll-inner01">
+                                                <div class="menu-scroll-inner02">
+                                                    <div class="menu-scroll-inner03">
+                                                        <p class="menu-scroll-primary">AI 및 자동화</p>
+                                                        <p class="menu-scroll-secondary">머신러닝 · 업무 자동화 · SaaS</p>
+                                                    </div>
+                                                    <div class="menu-scroll-check">
+                                                        <div draggable="false" class="menu-scroll-check-inner">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="checkclickoff" height="20px" width="20px" fill="currentColor" viewBox="0 0 16 16">
+                                                                <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0"/>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -642,7 +586,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- ========== 드롭다운 메뉴 (위치 필터) ========== -->
                      <div class="shadow-menu location">
                         <div class="shadow-menu-header">
                             <div class="shadow-menu-header-inner">모든 유형</div>
@@ -652,11 +595,11 @@
                                 <div class="shadow-menu-body-inner">
                                     <div class="shadow-menu-body-scroll">
                                         <div class="menu-scroll">
-                                            <div class="menu-scroll-inner01"> 
+                                            <div class="menu-scroll-inner01">
                                                 <div class="menu-scroll-inner02">
                                                     <div class="menu-scroll-inner03">
                                                         <p class="menu-scroll-primary">성장 전략</p>
-                                                        <p class="menu-scroll-secondary">비즈니스 성장 전략</p>         
+                                                        <p class="menu-scroll-secondary">비즈니스 성장 전략</p>
                                                     </div>
                                                     <div class="menu-scroll-check">
                                                         <div draggable="false" class="menu-scroll-check-inner">
@@ -665,15 +608,15 @@
                                                             </svg>
                                                         </div>
                                                     </div>
-                                                </div>   
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="menu-scroll">
-                                            <div class="menu-scroll-inner01"> 
+                                            <div class="menu-scroll-inner01">
                                                 <div class="menu-scroll-inner02">
                                                     <div class="menu-scroll-inner03">
                                                         <p class="menu-scroll-primary">트렌드 뉴스</p>
-                                                        <p class="menu-scroll-secondary">비즈니스 성장 전략</p>         
+                                                        <p class="menu-scroll-secondary">비즈니스 성장 전략</p>
                                                     </div>
                                                     <div class="menu-scroll-check">
                                                         <div draggable="false" class="menu-scroll-check-inner">
@@ -682,15 +625,15 @@
                                                             </svg>
                                                         </div>
                                                     </div>
-                                                </div>   
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="menu-scroll" >
-                                            <div class="menu-scroll-inner01"> 
+                                        <div class="menu-scroll">
+                                            <div class="menu-scroll-inner01">
                                                 <div class="menu-scroll-inner02">
                                                     <div class="menu-scroll-inner03">
                                                         <p class="menu-scroll-primary">법률 가이드</p>
-                                                        <p class="menu-scroll-secondary">비즈니스 성장 전략</p>         
+                                                        <p class="menu-scroll-secondary">비즈니스 성장 전략</p>
                                                     </div>
                                                     <div class="menu-scroll-check">
                                                         <div draggable="false" class="menu-scroll-check-inner">
@@ -699,15 +642,15 @@
                                                             </svg>
                                                         </div>
                                                     </div>
-                                                </div>   
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="menu-scroll">
-                                            <div class="menu-scroll-inner01"> 
+                                            <div class="menu-scroll-inner01">
                                                 <div class="menu-scroll-inner02">
                                                     <div class="menu-scroll-inner03">
                                                         <p class="menu-scroll-primary">팀 빌딩</p>
-                                                        <p class="menu-scroll-secondary">비즈니스 성장 전략</p>         
+                                                        <p class="menu-scroll-secondary">비즈니스 성장 전략</p>
                                                     </div>
                                                     <div class="menu-scroll-check">
                                                         <div draggable="false" class="menu-scroll-check-inner">
@@ -716,15 +659,15 @@
                                                             </svg>
                                                         </div>
                                                     </div>
-                                                </div>   
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="menu-scroll">
-                                            <div class="menu-scroll-inner01"> 
+                                            <div class="menu-scroll-inner01">
                                                 <div class="menu-scroll-inner02">
                                                     <div class="menu-scroll-inner03">
                                                         <p class="menu-scroll-primary">네트워킹</p>
-                                                        <p class="menu-scroll-secondary">비즈니스 성장 전략</p>         
+                                                        <p class="menu-scroll-secondary">비즈니스 성장 전략</p>
                                                     </div>
                                                     <div class="menu-scroll-check">
                                                         <div draggable="false" class="menu-scroll-check-inner">
@@ -733,15 +676,15 @@
                                                             </svg>
                                                         </div>
                                                     </div>
-                                                </div>   
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="menu-scroll">
-                                            <div class="menu-scroll-inner01"> 
+                                            <div class="menu-scroll-inner01">
                                                 <div class="menu-scroll-inner02">
                                                     <div class="menu-scroll-inner03">
                                                         <p class="menu-scroll-primary">페어</p>
-                                                        <p class="menu-scroll-secondary">비즈니스 성장 전략</p>         
+                                                        <p class="menu-scroll-secondary">비즈니스 성장 전략</p>
                                                     </div>
                                                     <div class="menu-scroll-check">
                                                         <div draggable="false" class="menu-scroll-check-inner">
@@ -750,7 +693,7 @@
                                                             </svg>
                                                         </div>
                                                     </div>
-                                                </div>   
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -761,238 +704,103 @@
                     </div>
             </div>
         </div>
-    </main>
-        <!-- ========== 모달 오버레이 ========== 
-         모달 창 활성화 시 배경 딤 처리
-    -->
-    <div id="modalOverlay" class="modal-overlay" aria-hidden="false"></div>
-    <!-- ========== 상세 정보 모달 ========== 
-         이벤트/공지사항 클릭 시 표시되는 상세 정보 모달
-         
-         섹션 구성:
-         1. 헤더 (닫기 버튼, 공유 버튼)
-         2. 이미지 및 기본 정보
-         3. 호스트, 게시 일시, 주제 정보
-         4. 공지사항 상세 내용
-         5. 관련 콘텐츠 링크
-         6. 주최자 정보
-    -->
-    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" tabindex="-1">
-        <div class="modal-container" style="pointer-events: auto;">
-            <div class="modal-wrap">
-                <div class="modal-header">
-                    <div class="modal-header-icon">
-                        <button class="modal-icon">
-                            <div draggable="false" class="modal-icon-inner">
-                                <svg aria-label="icon" color="foregrounds.neutral.tertiary" fill="currentColor" height="18" role="img" width="18">
-                                    <use href="../../static/image/insight/chevron-double-right.svg"></use>
-                                </svg>
-                            </div>
-                        </button>
-                    </div>
-                    <div class="modal-inner-context">
-                        <button type="button" class="modal-inner-share">
-                            <span class="modal-inner-span">공유하기</span>
-                        </button>
-                        <!-- <button type="button" class="modal-inner-regist">
-                            <span class="modal-inner-span">등록하기</span>
-                        </button> -->
-                    </div>
-                </div>
-                 <!-- 모달 본문 -->
-                <div class="modal-body">
-                    <div class="modal-body-wrap">
-                        <!-- 메인 이미지 -->
-                        <img src="../../static/image/insight/project-exposure.png" alt="" width="600" height="350" style="color: transparent; border-radius: 8px; height: auto; max-width: 640px; min-height: 320px; width: 100%;">
-                           <!-- 태그 영역 -->
-                        <div class="modal-body-inner01">
-                            <div class="modal-body-nwcf">
-                                <span class="nwcf-span">창업 길잡이</span>
-                            </div>
-                            <!-- <div class="modal-body-nwcf">
-                                <span class="nwcf-span">컨퍼런스</span>
-                            </div>   -->
-                        </div>
-                        <!-- 제목 -->
-                        <div class="modal-body-title">
-                            <div class="modal-body-title-start">
-                                <div class="modal-body-title-end">
-                                    <p class="modal-body-title-content">창업가라면 꼭 알아야 할 돈 주는 지원사업 총정리</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 이벤트 정보 섹션 -->
-                        <div class="modal-body-column">
-                            <!-- 호스트 정보 -->
-                            <div class="modal-body-column-inner">
-                                <div class="hdlt">
-                                    <p class="hdlt-text">호스트</p>
-                                </div>
-                                <div class="hdlt-content">
-                                    <div class="hdlt-content-column">
-                                        <p class="hdlt-content-p">C&M</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- 게시 일시 -->
-                            <div class="modal-body-column-inner">
-                                <div class="hdlt">
-                                    <p class="hdlt-text">게시 일시</p>
-                                </div>
-                                <div class="hdlt-content">
-                                    <div class="hdlt-content-column">
-                                        <p class="hdlt-content-p">2026년 1월 19일 월요일</p>
-                                        <!-- <p class="hdlt-content-p-second">오후 7:00 - 오후 9:00 (대한민국 표준시)</p> -->
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- <div class="modal-body-column-inner">
-                                <div class="hdlt">
-                                    <p class="hdlt-text">위치</p>
-                                </div>
-                                <div class="hdlt-content">
-                                    <div class="hdlt-content-column">
-                                        <p class="hdlt-content-p">위치 미정</p>
-                                    </div>
-                                </div>
-                            </div> -->
 
-                             <!-- 주제 -->
-                            <div class="modal-body-column-inner">
-                                <div class="hdlt">
-                                    <p class="hdlt-text">주제</p>
+        <div id="modalOverlay" class="modal-overlay" aria-hidden="false"></div>
+        <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" tabindex="-1">
+            <div class="modal-container" style="pointer-events: auto;">
+                <div class="modal-wrap">
+                    <div class="modal-header">
+                        <div class="modal-header-icon">
+                            <button class="modal-icon">
+                                <div draggable="false" class="modal-icon-inner">
+                                    <svg aria-label="icon" color="foregrounds.neutral.tertiary" fill="currentColor" height="18" role="img" width="18">
+                                        <use href="/image/insight/chevron-double-right.svg"></use>
+                                    </svg>
                                 </div>
-                                <div class="hdlt-content">
-                                    <div class="hdlt-content-column">
-                                        <p class="hdlt-content-p">창업, 스타트업, 지원사업</p>
-                                    </div>
-                                </div>
-                            </div>
+                            </button>
                         </div>
-                          <!-- ========== 공지사항 내용 섹션 ========== -->
-                        <div data-section-id="overview" class="modal-body-elh">
-                            <div class="elh-title">
-                                <div class="elh-title-inner">
-                                    <div class="elh-title-content">
-                                        <span class="elh-span">공지사항 내용</span>
-                                    </div>
-                                </div>
-                                <div width="100%">
-                                    <div class="elh-underbar"></div>
-                                </div>
-                            </div>
-                            <div class="elh-content-wrap">
-                                <div class="elt-content">
-                                    <p>
-                                        <h3>스타트업 단계별 정부지원사업 안내</h3>
-                                        정부지원사업은 창업 단계에 따라 맞춤형 자금과 프로그램을 제공하며,
-                                        업력에 맞는 사업에 선정될 경우 최대 5억 원 규모의 무상 지원금을 받을 수 있습니다.
-                                        <br>
-                                        <br>
-                                        <h4>예비창업패키지</h4>
-                                        예비창업자를 대상으로 최대 1억 원을 지원하는 사업입니다.
-                                        사업자등록이 없어도 신청할 수 있어 연초 가장 많은 관심을 받는 지원사업 중 하나입니다.
-                                        <ul style="margin-left: 20px;">
-                                            <li class="list">평균 지원금: 약 4,800만 원</li>
-                                            <li class="list">사용 가능 항목: 인건비, 재료비, 외주용역비, 지식재산권 비용 등</li>
-                                            <li class="list">창업 교육 40시간 이수 필수</li>
-                                            <li class="list">1:1 전담 멘토 매칭 및 사업계획 고도화 지원</li>
-                                            <li class="list">신청 시기: 매년 3월</li>
-                                        </ul>
-                                        <br>
-                                        <h4>초기창업패키지</h4>
-                                        창업 3년 미만의 초기 창업기업을 대상으로 최대 1억 원을 지원합니다.
-                                        아이템의 시장성 검증과 기술 고도화를 중점적으로 지원하는 사업입니다.
-                                        <ul style="margin-left: 20px;">
-                                            <li class="list">평균 지원금: 약 7,000만 원</li>
-                                            <li class="list">인건비, 재료비, 외주용역비, 지식재산권 비용 사용 가능</li>
-                                            <li class="list">시장 검증, 마케팅 지원, 지식재산권 보호 프로그램 제공</li>
-                                            <li class="list">신청 시기: 매년 3월</li>
-                                        </ul>
-                                        <br>
-                                        <h4>재도전성공패키지</h4>
-                                        폐업 경험이 있는 창업가의 재창업을 지원하는 사업입니다.
-                                        자금 지원뿐 아니라 재창업 전 과정을 아우르는 맞춤형 프로그램을 제공합니다.
-                                        <ul style="margin-left: 20px;">
-                                            <li class="list">대상: 폐업 후 7년 이내 재창업 도전자</li>
-                                            <li class="list">평균 지원금: 약 6,000만 원</li>
-                                            <li class="list">시제품 제작 및 재창업 교육 프로그램 제공</li>
-                                            <li class="list">신청 시기: 매년 1월</li>
-                                        </ul>
-                                        <br>
-                                        <h4>창업도약패키지</h4>
-                                        설립 3년 이상 7년 미만 기업을 대상으로 하는 성장 단계 지원사업입니다.
-                                        사업 모델 혁신과 시장 진입을 통해 자생적 성장을 돕는 것이 목적입니다.
-                                        <ul style="margin-left: 20px;">
-                                            <li class="list">지원 규모: 최대 3~4억 원</li>
-                                            <li class="list">평균 지원금: 약 1.2억 원</li>
-                                            <li class="list">대기업 협업 과제 선택 가능</li>
-                                            <li class="list">대기업 인프라, 테스트베드, 데이터 활용 기회 제공</li>
-                                            <li class="list">신청 시기: 매년 3월</li>
-                                        </ul>
-                                        <br>
-                                        <h4>청년창업사관학교</h4>
-                                        만 39세 이하 예비창업자 또는 창업 3년 이내 기업을 대상으로 운영되는 사업입니다.
-                                        창업 교육과 사업화 자금을 함께 지원하는 것이 특징입니다.
-                                        <ul style="margin-left: 20px;">
-                                            <li class="list">최대 1억 원 사업화 자금 지원</li>
-                                            <li class="list">평균 지원금: 약 5,000만 원</li>
-                                            <li class="list">전국 17개 센터 운영</li>
-                                            <li class="list">입소형 및 준입소형 과정 선택 가능</li>
-                                            <li class="list">창업 교육, 멘토링, 네트워킹 프로그램 제공</li>
-                                            <li class="list">신청 시기: 매년 1월</li>
-                                        </ul>
-                                        <br>
-                                        <h4>업력별 추천 지원사업 로드맵</h4>
-                                        <ul style="margin-left: 20px;">
-                                            <li class="list">예비창업자: 예비창업패키지, 청년창업사관학교</li>
-                                            <li class="list">초기창업자(3년 미만): 초기창업패키지</li>
-                                            <li class="list">도약기 창업자(3~7년): 창업도약패키지</li>
-                                        </ul>
-                                        단계별로 지원사업에 선정될 경우,
-                                        최대 5억 원 규모의 정부지원금을 확보할 수 있습니다.
-                                        다만 여러 사업에 지원은 가능하나, 중복 수혜는 불가하므로
-                                        하나의 사업을 선택해 참여해야 합니다.
-                                    </p>
-                                </div>
-                            </div>
+                        <div class="modal-inner-context">
+                            <button type="button" class="modal-inner-share">
+                                <span class="modal-inner-span">공유하기</span>
+                            </button>
                         </div>
-                          <!-- ========== 관련 콘텐츠 섹션 ========== -->
-                        <div data-section-id="location" class="modal-body-elh">
-                            <div class="elh-title">
-                                <div class="elh-title-inner">
-                                    <div class="elh-title-content">
-                                        <span class="elh-span">함께 읽으면 도움이 되는 콘텐츠</span>
-                                    </div>
-                                </div>
-                                <div width="100%">
-                                    <div class="elh-underbar"></div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-body-wrap">
+                            <img src="/image/insight/project-exposure.png" alt="" width="600" height="350" style="color: transparent; border-radius: 8px; height: auto; max-width: 640px; min-height: 320px; width: 100%;">
+                            <div class="modal-body-inner01">
+                                <div class="modal-body-nwcf">
+                                    <span class="nwcf-span">창업 길잡이</span>
                                 </div>
                             </div>
-                            <div class="elh-content-wrap">
-                                <div class="elt-content"> 
-                                    <ul class="elt-content-span" style="margin-left: 20px;">
-                                        <li>정부지원사업 준비를 위한 필수 정보 모음</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- ========== 주최자 정보 섹션 ========== -->
-                        <div data-section-id="sponsor" class="modal-body-elh">
-                            <div class="elh-title">
-                                <div class="elh-title-inner">
-                                    <div class="elh-title-content">
-                                        <span class="elh-span">컨퍼런스</span>
+                            <div class="modal-body-title">
+                                <div class="modal-body-title-start">
+                                    <div class="modal-body-title-end">
+                                        <p class="modal-body-title-content">창업가라면 꼭 알아야 할 돈 주는 지원사업 총정리</p>
                                     </div>
                                 </div>
                             </div>
-                            <div width="100%">
-                                    <div class="elh-underbar"></div>
+                            <div class="modal-body-column">
+                                <div class="modal-body-column-inner">
+                                    <div class="hdlt"><p class="hdlt-text">호스트</p></div>
+                                    <div class="hdlt-content"><div class="hdlt-content-column"><p class="hdlt-content-p">C&M</p></div></div>
                                 </div>
-                            <div class="elh-content-wrap">
-                                <div class="elt-content">
-                                    <span class="elt-content-p" style="font-size: 12px;line-height: 16px;">주최</span>
-                                    <span class="elt-content-span" style="font-size: 13px;line-height: 18px;">중소기업벤처</span>
+                                <div class="modal-body-column-inner">
+                                    <div class="hdlt"><p class="hdlt-text">게시 일시</p></div>
+                                    <div class="hdlt-content"><div class="hdlt-content-column"><p class="hdlt-content-p">2026년 1월 19일 월요일</p></div></div>
+                                </div>
+                                <div class="modal-body-column-inner">
+                                    <div class="hdlt"><p class="hdlt-text">주제</p></div>
+                                    <div class="hdlt-content"><div class="hdlt-content-column"><p class="hdlt-content-p">창업, 스타트업, 지원사업</p></div></div>
+                                </div>
+                            </div>
+                            <div data-section-id="overview" class="modal-body-elh">
+                                <div class="elh-title">
+                                    <div class="elh-title-inner"><div class="elh-title-content"><span class="elh-span">공지사항 내용</span></div></div>
+                                    <div width="100%"><div class="elh-underbar"></div></div>
+                                </div>
+                                <div class="elh-content-wrap">
+                                    <div class="elt-content">
+                                        <p>
+                                            <h3>스타트업 단계별 정부지원사업 안내</h3>
+                                            정부지원사업은 창업 단계에 따라 맞춤형 자금과 프로그램을 제공하며,
+                                            업력에 맞는 사업에 선정될 경우 최대 5억 원 규모의 무상 지원금을 받을 수 있습니다.
+                                            <br><br>
+                                            <h4>예비창업패키지</h4>
+                                            예비창업자를 대상으로 최대 1억 원을 지원하는 사업입니다.
+                                            <ul style="margin-left: 20px;">
+                                                <li class="list">평균 지원금: 약 4,800만 원</li>
+                                                <li class="list">사용 가능 항목: 인건비, 재료비, 외주용역비, 지식재산권 비용 등</li>
+                                                <li class="list">창업 교육 40시간 이수 필수</li>
+                                                <li class="list">신청 시기: 매년 3월</li>
+                                            </ul>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-section-id="location" class="modal-body-elh">
+                                <div class="elh-title">
+                                    <div class="elh-title-inner"><div class="elh-title-content"><span class="elh-span">함께 읽으면 도움이 되는 콘텐츠</span></div></div>
+                                    <div width="100%"><div class="elh-underbar"></div></div>
+                                </div>
+                                <div class="elh-content-wrap">
+                                    <div class="elt-content">
+                                        <ul class="elt-content-span" style="margin-left: 20px;">
+                                            <li>정부지원사업 준비를 위한 필수 정보 모음</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-section-id="sponsor" class="modal-body-elh">
+                                <div class="elh-title">
+                                    <div class="elh-title-inner"><div class="elh-title-content"><span class="elh-span">컨퍼런스</span></div></div>
+                                </div>
+                                <div width="100%"><div class="elh-underbar"></div></div>
+                                <div class="elh-content-wrap">
+                                    <div class="elt-content">
+                                        <span class="elt-content-p" style="font-size: 12px;line-height: 16px;">주최</span>
+                                        <span class="elt-content-span" style="font-size: 13px;line-height: 18px;">중소기업벤처</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1000,9 +808,21 @@
                 </div>
             </div>
         </div>
+        <div class="event-div"></div>
+
+        <!-- SVG symbols for sidebar icons -->
+        <svg style="display: none;"><symbol id="home-simple-2-solid" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M10.92 3.81a1.8 1.8 0 0 1 2.16 0l7 5.25c.453.34.72.873.72 1.44V19a1.8 1.8 0 0 1-1.8 1.8h-4a1.8 1.8 0 0 1-1.8-1.8v-3a.2.2 0 0 0-.2-.2h-2a.2.2 0 0 0-.2.2v3A1.8 1.8 0 0 1 9 20.8H5A1.8 1.8 0 0 1 3.2 19v-8.5c0-.567.267-1.1.72-1.44z" clip-rule="evenodd"></path></symbol></svg>
+        <svg style="display: none;"><symbol id="globe-earth-2-solid" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2.2c1.093 0 2.144.182 3.126.512v1.362c0 .622-.504 1.126-1.126 1.126h-.5a2.3 2.3 0 0 0-2.3 2.3V8a.2.2 0 0 1-.2.2A1.8 1.8 0 0 0 9.2 10v1a2.8 2.8 0 0 0 2.8 2.8h2a1.2 1.2 0 0 1 1.2 1.2 2.8 2.8 0 0 0 2.604 2.793h2.1A9.78 9.78 0 0 1 12 21.8c-.067 0-.134-.005-.2-.006V18.5a2.31 2.31 0 0 0-2.313-2.3.686.686 0 0 1-.687-.674c0-.524-.181-1.034-.514-1.44L3.144 7.8A9.8 9.8 0 0 1 12 2.2M7.048 15.1c.098.12.152.27.152.426A2.285 2.285 0 0 0 9.487 17.8c.396 0 .713.323.713.7v3.132c-4.552-.846-8-4.835-8-9.632 0-.846.106-1.666.308-2.45zm9.495-11.784A9.8 9.8 0 0 1 21.8 12a9.76 9.76 0 0 1-.945 4.2l-1.811.001H18A1.2 1.2 0 0 1 16.8 15a2.8 2.8 0 0 0-2.8-2.8h-2a1.2 1.2 0 0 1-1.2-1.2v-1c0-.11.09-.2.2-.2A1.8 1.8 0 0 0 12.8 8v-.5a.7.7 0 0 1 .7-.7h.5a2.543 2.543 0 0 0 2.543-2.543z" clip-rule="evenodd"></path></symbol></svg>
+        <svg style="display: none;"><symbol id="users-group-3-solid" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M7 8a5 5 0 1 1 10 0A5 5 0 0 1 7 8M5 18a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v1a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2zm13.998-9.829a6.97 6.97 0 0 1-1.613 4.301l.016.028a6 6 0 0 1 2.02 1.444Q19.704 14 20 14a3 3 0 1 0-1.002-5.829M21 19q-.002.519-.126 1H23a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-.803c.51.883.803 1.907.803 3zM3 18c0-1.093.292-2.117.803-3H3a3 3 0 0 0-3 3v1a1 1 0 0 0 1 1h2.126A4 4 0 0 1 3 19zm1.578-4.056a6 6 0 0 1 2.02-1.444l.017-.028a6.97 6.97 0 0 1-1.613-4.3 3 3 0 1 0-.424 5.773" clip-rule="evenodd"></path></symbol></svg>
+        <svg style="display: none;"><symbol id="book-open-solid" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M2.494 5.984c3.17-2.59 6.57-1.899 8.706-.815v14.243c-1.651-1.105-4.81-2.15-7.694.208A.8.8 0 0 1 2.2 19V6.603a.8.8 0 0 1 .294-.62M12.8 5.169c2.136-1.084 5.536-1.776 8.706.815a.8.8 0 0 1 .294.619V19a.8.8 0 0 1-1.306.62c-2.884-2.358-6.043-1.313-7.694-.208z" clip-rule="evenodd"></path></symbol></svg>
+        <svg style="display: none;"><symbol id="comments-solid" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M9.2 12A2.8 2.8 0 0 1 12 9.2h7a2.8 2.8 0 0 1 2.8 2.8v9a.8.8 0 0 1-1.244.666L18.06 20a1.2 1.2 0 0 0-.666-.201H12A2.8 2.8 0 0 1 9.2 17zM12 2.2A2.8 2.8 0 0 1 14.8 5v2.6H12A4.4 4.4 0 0 0 7.6 12v.8h-.995c-.236 0-.468.07-.665.202l-2.497 1.664A.8.8 0 0 1 2.2 14V5A2.8 2.8 0 0 1 5 2.2z" clip-rule="evenodd"></path></symbol></svg>
+        <svg style="display: none;"><symbol id="telescope-solid" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M16.188 2.307a.8.8 0 0 1 1.093.293l4 6.928a.8.8 0 0 1-1.386.8l-.1-.173-5.369 3.1a1.8 1.8 0 0 1-1.897-.06l-1.818 1.05 2.988 5.366a.8.8 0 0 1-1.398.778l-2.57-4.614-1.895 4.534a.8.8 0 0 1-1.476-.617l1.617-3.868-.113.065a1.8 1.8 0 0 1-1.897-.06l-1.201.694a1.8 1.8 0 1 1-1.8-3.118l1.201-.693a1.8 1.8 0 0 1 .897-1.673l4.665-2.693a1.8 1.8 0 0 1 .897-1.673l5.37-3.1-.1-.173a.8.8 0 0 1 .292-1.093" clip-rule="evenodd"></path></symbol></svg>
+        <svg style="display: none;"><symbol id="layout-sidebar-left-outline" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M6 4.8A1.2 1.2 0 0 0 4.8 6v12A1.2 1.2 0 0 0 6 19.2h3.2V4.8zm4.8 0v14.4H18a1.2 1.2 0 0 0 1.2-1.2V6A1.2 1.2 0 0 0 18 4.8zM3.2 6A2.8 2.8 0 0 1 6 3.2h12A2.8 2.8 0 0 1 20.8 6v12a2.8 2.8 0 0 1-2.8 2.8H6A2.8 2.8 0 0 1 3.2 18z" fill-rule="evenodd"></path></symbol></svg>
+        <svg style="display: none;"><symbol id="bell-outline" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12 1.2a.8.8 0 0 1 .8.8v1.236c2.215.202 3.71 1.242 4.65 2.547C18.467 7.198 18.8 8.872 18.8 10v3c0 1.499.313 2.32.607 2.744.294.422.565.456.593.456a.8.8 0 0 1 0 1.6h-4.2v.2a4.15 4.15 0 0 1-.75 2.342c-.6.831-1.59 1.458-3.05 1.458s-2.45-.627-3.05-1.458A4.15 4.15 0 0 1 8.2 18v-.2H4a.8.8 0 0 1 0-1.6c.028 0 .3-.034.593-.456.294-.423.607-1.245.607-2.744v-3c0-2.66 1.127-4.4 2.583-5.45 1.109-.798 2.377-1.174 3.417-1.3V2a.8.8 0 0 1 .8-.8m-5.827 15h11.654c-.382-.766-.627-1.822-.627-3.2v-3c0-.872-.268-2.198-1.05-3.283C15.4 5.673 14.14 4.8 12 4.8c-.872 0-2.198.268-3.283 1.05C7.673 6.6 6.8 7.86 6.8 10v3c0 1.377-.245 2.434-.627 3.2M9.8 17.8v.2c0 .372.118.948.45 1.408.3.419.81.792 1.75.792s1.45-.373 1.75-.792A2.55 2.55 0 0 0 14.2 18v-.2z" fill-rule="evenodd"></path></symbol></svg>
+        <svg style="display: none;"><symbol id="login-outline" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M8.2 3a.8.8 0 0 1 .8-.8h8A2.8 2.8 0 0 1 19.8 5v14a2.8 2.8 0 0 1-2.8 2.8H9a.8.8 0 0 1 0-1.6h8a1.2 1.2 0 0 0 1.2-1.2V5A1.2 1.2 0 0 0 17 3.8H9a.8.8 0 0 1-.8-.8m2.234 4.434a.8.8 0 0 1 1.132 0l4 4a.8.8 0 0 1 0 1.132l-4 4a.8.8 0 0 1-1.132-1.132L13.07 12.8H5a.8.8 0 0 1 0-1.6h8.069l-2.635-2.634a.8.8 0 0 1 0-1.132" fill-rule="evenodd"></path></symbol></svg>
+        <svg style="display: none;"><symbol id="user-outline" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12 3.8a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4M7.2 7a4.8 4.8 0 1 1 9.6 0 4.8 4.8 0 0 1-9.6 0M9 15.8A3.2 3.2 0 0 0 5.8 19v2a.8.8 0 0 1-1.6 0v-2A4.8 4.8 0 0 1 9 14.2h6a4.8 4.8 0 0 1 4.8 4.8v2a.8.8 0 0 1-1.6 0v-2a3.2 3.2 0 0 0-3.2-3.2z" fill-rule="evenodd"></path></symbol></svg>
     </div>
-    <!-- 이벤트 div (추가 기능용) -->
-    <div class="event-div"></div>
+</div>
+<script src="/js/insight/insight.js"></script>
 </body>
-<script src="../../static/js/insight/insight.js"></script>
 </html>

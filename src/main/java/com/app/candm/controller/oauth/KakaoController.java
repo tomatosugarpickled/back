@@ -30,7 +30,7 @@ public class KakaoController {
             path = "/member/kakao-join";
         }else {
             session.setAttribute("member", memberDTO);
-            path = "/mypage";
+            path = "/main";
         }
 
         return new RedirectView(path);

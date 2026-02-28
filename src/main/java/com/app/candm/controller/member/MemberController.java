@@ -48,10 +48,10 @@ public class MemberController {
     public RedirectView login(MemberDTO memberDTO){
         session.setAttribute("member",memberService.login(memberDTO));
         log.info(session.toString());
-        return new RedirectView("/mypage");
+        return new RedirectView("/main");
     }
 
-//    카카오 추가정보 입력으로 읻오
+//    카카오 추가정보 입력으로 이동
     @GetMapping("kakao-join")
     public String GotoKakaoJoinForm(){
         return "/member/kakao-join";
@@ -60,7 +60,7 @@ public class MemberController {
     @PostMapping("kakao-join")
     public RedirectView kakaoJoin(MemberDTO memberDTO){
         memberService.kakaoJoin(memberDTO);
-        return new RedirectView("/mypage");
+        return new RedirectView("/main");
     }
 
 //    로그아웃

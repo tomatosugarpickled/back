@@ -4,23 +4,7 @@
 /* 폰트 변수 임포트 */
 @import url('../common/font.css');
 
-* {
-    margin: 0;
-    padding: 0;
-    border-width: 0;
-    border-style: solid;
-    border-color: currentColor;
-}
-
-svg {
-    display: block;
-    vertical-align: middle;
-}
-
-body {
-    overflow: hidden;
-    background-color: var(--bg-page);
-}
+/* 전역 리셋(*, svg, body)은 main.css에서 처리 */
 
 .main-border {
      /* ì¢Œì¸¡ ì‚¬ì´ë“œë°” ê³µê°„ í™•ë³´ */
