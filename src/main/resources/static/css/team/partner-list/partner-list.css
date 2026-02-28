@@ -1,103 +1,4 @@
-/* 전역 색상 변수 임포트 */
-@import url('../../common/global-colors.css');
-
-* {
-    box-sizing: border-box;
-    word-break: keep-all;
-    overflow-wrap: anywhere;
-    -webkit-text-size-adjust: 100%;
-    -moz-text-size-adjust: 100%;
-    text-size-adjust: 100%;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-    font-synthesis: none;
-}
-
-body {
-    height: 100svh;
-    margin: 0;
-    -webkit-overflow-scrolling: touch;
-    overflow: hidden;
-    background: var(--bg-page);
-    color: var(--text-body);
-    font-family: var(--texts--fonts--body);
-}
-
-p {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    unicode-bidi: isolate;
-}
-
-::file-selector-button,
-button,
-input,
-optgroup,
-select,
-textarea {
-    font: inherit;
-    font-feature-settings: inherit;
-    font-variation-settings: inherit;
-    letter-spacing: inherit;
-    color: inherit;
-    background: var(--bg-input);
-}
-
-*,
-::backdrop,
-:after,
-:before {
-    --blur: ;
-    --brightness: ;
-    --contrast: ;
-    --grayscale: ;
-    --hue-rotate: ;
-    --invert: ;
-    --saturate: ;
-    --sepia: ;
-    --drop-shadow: ;
-    --backdrop-blur: ;
-    --backdrop-brightness: ;
-    --backdrop-contrast: ;
-    --backdrop-grayscale: ;
-    --backdrop-hue-rotate: ;
-    --backdrop-invert: ;
-    --backdrop-opacity: ;
-    --backdrop-saturate: ;
-    --backdrop-sepia: ;
-    --gradient-from-position: ;
-    --gradient-to-position: ;
-    --gradient-via-position: ;
-    --scroll-snap-strictness: proximity;
-    --border-spacing-x: 0;
-    --border-spacing-y: 0;
-    --translate-x: 0;
-    --translate-y: 0;
-    --rotate: 0;
-    --rotate-x: 0;
-    --rotate-y: 0;
-    --skew-x: 0;
-    --skew-y: 0;
-    --scale-x: 1;
-    --scale-y: 1;
-}
-
-*,
-::backdrop,
-::file-selector-button,
-:after,
-:before {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    border-width: 0;
-    border-style: solid;
-    border-color: var(--global-color-border, currentcolor);
-}
+/* partner-list 전용 스타일 (전역 리셋은 main.css에서 처리) */
 
 .teamlist-container {
     flex-direction: column;
@@ -240,8 +141,8 @@ textarea {
     position: absolute;
     cursor: pointer;
     transition:
-        opacity 0.2s,
-        visibility 0.2s;
+            opacity 0.2s,
+            visibility 0.2s;
 }
 
 .tooltip-inner-section {
@@ -746,7 +647,7 @@ body > svg {
     margin-left: 297px; margin-top: 10px; /*임시로 위치 지정*/
     width: 1614px;
     height: 893px;
-    border: solid 1px; 
+    border: solid 1px;
     border-radius: 16px;
     border-color: var(--global-color-border); /* Adapted for Light Mode */
     background-color: var(--bg-page); /* Light Mode 배경 */
@@ -1095,7 +996,7 @@ body > svg {
     flex: 1;
     /* 스크롤바 커스터마이징 (더 잘 보이게 수정) */
     scrollbar-width: thin;
-    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track); 
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
 }
 
 /* 스크롤바 웹킷 (Chrome, Safari 등) 호환성 추가 - list에 적용 */
@@ -1244,4 +1145,3 @@ body > svg {
     line-height: 18px;
     cursor: pointer;
 }
-
