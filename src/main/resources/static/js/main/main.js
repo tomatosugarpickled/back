@@ -205,3 +205,11 @@ notificationItems.forEach(item => {
         });
     }
 });
+
+// 버튼 클릭 시 a태그 클릭
+const myPageBtn = document.querySelector(".profile-login-button")
+const linkTag = document.querySelector(".profile-login-button-text")
+
+myPageBtn.addEventListener("click", (e) => {
+    linkTag.click();
+})

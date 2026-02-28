@@ -47,37 +47,7 @@ C&M Insight - 스타일시트
    1. 전역 스타일 및 리셋
    ======================================================================== */
 
-/**
- * 브라우저 기본 스타일 초기화
- * - 일관된 레이아웃을 위한 여백 제거
- * - border-box 모델 적용 준비
- */
-* {
-    margin: 0;
-    padding: 0;
-    border-width: 0;
-    border-style: solid;
-    border-color: currentColor;
-}
-
-/**
- * SVG 아이콘 정렬
- * - 텍스트와 정렬 시 baseline 문제 해결
- */
-svg {
-    display: block;
-    vertical-align: middle;
-}
-
-/**
- * Body 기본 스타일
- * - 스크롤 방지: 모달 사용 시 배경 고정
- * - 다크 테마 배경색
- */
-body {
-    overflow: hidden;
-    background-color: var(--bg-card); /* 전역 변수 사용 */
-}
+/* 전역 리셋(*, svg, body)은 main.css에서 처리 */
 
 
 /* ========================================================================

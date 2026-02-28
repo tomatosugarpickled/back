@@ -2015,6 +2015,15 @@ a {
     display: none;
 }
 
+/* Thymeleaf th:fragment 익명 래퍼 보정 */
+.center > div {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 0;
+    align-self: stretch;
+    width: 100%;
+}
+
 .banner {
     justify-content: space-between;
     align-items: flex-end;

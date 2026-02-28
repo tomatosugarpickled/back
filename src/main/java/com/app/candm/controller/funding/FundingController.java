@@ -55,8 +55,8 @@ public class FundingController {
     /* ================= 펀딩 목록 ================= */
 
     @GetMapping("/funding-list-page")
-    public String showFundingList(@RequestParam("teamId") Long teamId, Model model) {
-        List<FundingDTO> fundingList = fundingService.getListByTeam(teamId);
+    public String showFundingList(@RequestParam(value = "teamId", required = false) Long teamId, Model model) {
+        List<FundingDTO> fundingList = teamId != null ? fundingService.getListByTeam(teamId) : List.of();
         model.addAttribute("fundingList", fundingList);
         model.addAttribute("teamId", teamId);
         return "/funding/funding-list-page";
